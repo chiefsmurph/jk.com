@@ -24,8 +24,8 @@ export async function writeCodes(codes: Code[]) {
 }
 
 export function generateCode(existingCodes: Code[]): Code['value'] {
-  const animals = ['FOX', 'OWL', 'DOG', 'BAT', 'ANT', 'CAT', 'EEL', 'RAM', 'COW', 'HEN', 'LION', 'WOLF', 'TIGER', 'EAGLE', 'SHARK', 'RAVEN', 'SNAKE'];
-  const safeNumbers = '23456789ABCDEFGHJKMNPQRSTUVWXYZ'; // Avoid confusing characters
+  const animals = ['FOX', 'OWL', 'DOG', 'BAT', 'ANT', 'CAT', 'RAM', 'COW', 'HEN'];
+  const safeNumbers = '2346789'; // Only numbers, no letters
 
   let newCode;
   let isDuplicate = true;
