@@ -24,7 +24,7 @@ export async function writeCodes(codes: Code[]) {
 }
 export function generateCode(): Code['value'] {
   const animals = ['FOX', 'OWL', 'DOG', 'BAT', 'ANT', 'CAT', 'EEL', 'RAM', 'COW', 'HEN', 'LION', 'WOLF', 'TIGER', 'EAGLE', 'SHARK', 'RAVEN', 'SNAKE'];
-  const safeNumbers = '23456789ABCDEFGHJKMNPQRSTUVWXYZ'; // Avoid confusing characters
+  const safeNumbers = '2345679'; // Avoid confusing characters
 
   const animal = animals[Math.floor(Math.random() * animals.length)];
   const nums = Array.from({ length: 2 }, () =>
