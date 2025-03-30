@@ -23,7 +23,7 @@ export async function writeCodes(codes: Code[]) {
   await fs.writeFile(FILE, JSON.stringify({ codes }, null, 2));
 }
 export function generateCode(): Code['value'] {
-  const animals = ['FOX', 'OWL', 'DOG', 'BAT', 'ANT', 'CAT', 'EEL', 'RAM', 'COW', 'HEN', 'LION', 'WOLF', 'TIGER', 'EAGLE', 'SHARK', 'RAVEN', 'SNAKE'];
+  const animals = ['FOX', 'OWL', 'DOG', 'BAT', 'ANT', 'CAT', 'EEL', 'RAM', 'COW', 'HEN', 'LION', 'WOLF'];
   const safeNumbers = '2345679'; // Avoid confusing characters
 
   const animal = animals[Math.floor(Math.random() * animals.length)];
