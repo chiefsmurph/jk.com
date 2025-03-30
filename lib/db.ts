@@ -27,7 +27,7 @@ export function generateCode(existingCodes: Code[]): Code['value'] {
   const animals = ['FOX', 'OWL', 'DOG', 'BAT', 'ANT', 'CAT', 'RAM', 'COW', 'HEN'];
   const safeNumbers = '23678'; // Only numbers 2, 3, 6, 7, 8 to avoid confusion with '4', '9', '0'
 
-  let newCode;
+  let newCode: string | undefined;
   let isDuplicate = true;
 
   // Keep generating until we find a unique code
