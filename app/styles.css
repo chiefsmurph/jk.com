@@ -1,0 +1,27 @@
+@keyframes boldGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 8px #ff8c00,
+      0 0 16px #ff8c00,
+      0 0 32px #ff8c00,
+      0 0 48px #ff8c00,
+      0 0 64px #ff8c00;
+  }
+  50% {
+    text-shadow:
+      0 0 16px #ffaa33,
+      0 0 32px #ffaa33,
+      0 0 48px #ffaa33,
+      0 0 64px #ffaa33,
+      0 0 80px #ffaa33;
+  }
+}
+
+.glitch {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  animation: boldGlow 3.5s ease-in-out infinite;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
