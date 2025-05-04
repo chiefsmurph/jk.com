@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
+import products from "../public/products.json";
+
+import styles from "./HomeGrid.module.css";
 import "./styles.css";
+import ProductCard from "@/components/ProductCard";
 
 export default function HomePage() {
   const [redeemers, setRedeemers] = useState<{ name: string; fact: string }[]>(
@@ -45,8 +49,8 @@ export default function HomePage() {
         transition={{ delay: 0.3 }}
         style={{ marginBottom: "2rem" }}
       >
-        A clothing brand for appreciators of high-quality natural fibers and
-        unique artistic takes on the world.
+        Escape the Ordinary—Own a Collectible Piece of Paradise. Our apparel is
+        unlike any other.
       </motion.p>
 
       <motion.p
@@ -80,6 +84,17 @@ export default function HomePage() {
           Redeem a Coupon Code
         </Link>
       </motion.p>
+      <section className={styles.grid}>
+        {products.products.map((p) => (
+          <ProductCard
+            key={p.id}
+            id={p.id}
+            title={p.title}
+            price={p.price}
+            img={p.images[0]}
+          />
+        ))}
+      </section>
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

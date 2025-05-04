@@ -1,0 +1,53 @@
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.price {
+  margin: 8px 0 16px;
+  color: #555;
+}
+
+.desc {
+  margin-bottom: 24px;
+}
+
+.gallery {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button:not(:disabled):hover {
+  opacity: 0.9;
+}
