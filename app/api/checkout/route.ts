@@ -3,6 +3,7 @@ import Stripe from "stripe";
 import products, { getProductImages } from "../../../public/products";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+const origin = "https://modernorangepineapple.com";
 
 export async function POST(req: NextRequest) {
   const { productId, ...options } = await req.json();
@@ -14,10 +15,6 @@ export async function POST(req: NextRequest) {
   if (options.color) descriptionParts.push(`Color: ${options.color}`);
   if (options.size) descriptionParts.push(`Size: ${options.size}`);
   const description = descriptionParts.join(", ");
-
-  const host = req.headers.get("x-forwarded-host") || req.headers.get("host");
-  const protocol = req.headers.get("x-forwarded-proto") || "https";
-  const origin = `${protocol}://${host}`;
 
   // Build absolute image URL
   const imageUrl = `${origin}${
