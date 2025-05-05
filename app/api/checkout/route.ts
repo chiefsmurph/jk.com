@@ -17,9 +17,7 @@ export async function POST(req: NextRequest) {
   const description = descriptionParts.join(", ");
 
   // Build absolute image URL
-  const imageUrl = `${origin}${
-    getProductImages(product, options["color"])[0]
-  }`;
+  const imageUrl = `${origin}${getProductImages(product, options["color"])[0]}`;
 
   const [min, max] = product.shipping.estDelivery.split("-").map(Number);
   const sessionParams: Stripe.Checkout.SessionCreateParams = {
@@ -82,6 +80,8 @@ export async function POST(req: NextRequest) {
     success_url: `${origin}/${product.id}?status=success`,
     cancel_url: `${origin}/${product.id}?status=cancel`,
   };
+
+  console.log(JSON.stringify(sessionParams, null, 2));
 
   const session = await stripe.checkout.sessions.create(sessionParams);
 
