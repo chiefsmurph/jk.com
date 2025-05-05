@@ -101,7 +101,7 @@ const products: { products: Product[] } = {
       id: "pelican-beanie-t-shirt",
       title: "Pelican With Beanie T Shirt",
       description:
-        "Bring the sky everywhere you go with this all‑over cloud print T‑shirt!\n\n- Fabric: 100% cotton\n- Regular fit with classic O‑neck\n- Fabric weight: 190 g/m²",
+        "Yes, this really is the coolest Pelican you have ever met.  Wearing a beanie and with a sly, devilish grin this shirt will surely have heads turning!\n\n- Fabric: 100% cotton\n-  Taped neck and shoulders\n- Fabric weight: 170-180 g/m²",
       options: {
         size: ["S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"],
         color: ["Daisy", "Light Blue", "White"],
