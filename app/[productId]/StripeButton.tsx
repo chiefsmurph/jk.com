@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./StripeButton.module.css";
-import products from "../../public/products";
-import { Options } from "./page";
+import { Options } from "./ProductClientView";
 
 export default function StripeButton({
   productId,

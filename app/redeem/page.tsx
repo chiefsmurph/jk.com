@@ -148,7 +148,6 @@ export default function RedeemPage() {
           }}
           onClick={() => {
             sessionStorage.setItem("fromClientNav", "true");
-            alert('set it')
           }}
         >
           ← Back to Home
