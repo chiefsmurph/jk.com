@@ -15,12 +15,16 @@ export async function POST(req: NextRequest) {
   if (options.size) descriptionParts.push(`Size: ${options.size}`);
   const description = descriptionParts.join(", ");
 
+  const host = req.headers.get("x-forwarded-host") || req.headers.get("host");
+  const protocol = req.headers.get("x-forwarded-proto") || "https";
+  const origin = `${protocol}://${host}`;
+
   // Build absolute image URL
-  const imageUrl = `${req.nextUrl.origin}${
+  const imageUrl = `${origin}${
     getProductImages(product, options["color"])[0]
   }`;
 
-  const [min, max] = product.shipping.estDelivery.split('-').map(Number);
+  const [min, max] = product.shipping.estDelivery.split("-").map(Number);
   const sessionParams: Stripe.Checkout.SessionCreateParams = {
     mode: "payment",
     payment_method_types: ["card"],
@@ -44,7 +48,16 @@ export async function POST(req: NextRequest) {
     ],
     shipping_address_collection: {
       allowed_countries: [
-        "US", "CA", "GB", "AU", "NZ", "DE", "FR", "NL", "SE", "NO",
+        "US",
+        "CA",
+        "GB",
+        "AU",
+        "NZ",
+        "DE",
+        "FR",
+        "NL",
+        "SE",
+        "NO",
       ],
     },
     shipping_options: [
@@ -63,16 +76,16 @@ export async function POST(req: NextRequest) {
             },
             maximum: {
               unit: "business_day",
-              value: max
+              value: max,
             },
           },
         },
       },
     ],
-    success_url: `${req.nextUrl.origin}/${product.id}?status=success`,
-    cancel_url: `${req.nextUrl.origin}/${product.id}?status=cancel`,
+    success_url: `${origin}/${product.id}?status=success`,
+    cancel_url: `${origin}/${product.id}?status=cancel`,
   };
-  
+
   const session = await stripe.checkout.sessions.create(sessionParams);
 
   return NextResponse.json({ url: session.url });
