@@ -2,11 +2,11 @@ import { getProductImages } from "@/public/products";
 import products from "@/public/products";
 import ProductClientView from "./ProductClientView";
 
-export default async function ProductPage({
-  params,
-}: {
-  params: { productId: string };
-}) {
+type ProductPageProps = {
+  params: Promise<{ productId: string }>;
+};
+
+export default async function ProductPage({ params }: ProductPageProps) {
   const { productId } = await params;
   const product = products.products.find((p) => p.id === productId);
   if (!product) return <p>Not found</p>;
