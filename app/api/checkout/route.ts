@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import products, {
-  getFreeShippingPrice,
+  getDisplayPrice,
   getProductImages,
 } from "../../../public/products";
-import APP_SETTINGS from "@/settings";
 import { p } from "framer-motion/client";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
@@ -41,10 +40,7 @@ export async function POST(req: NextRequest) {
               ...options,
             },
           },
-          unit_amount:
-            (APP_SETTINGS.freeShippingModeEnabled
-              ? getFreeShippingPrice(product)
-              : product.price) * 100,
+          unit_amount: Math.round(getDisplayPrice(product) * 100),
         },
         quantity: 1,
       },
@@ -68,7 +64,7 @@ export async function POST(req: NextRequest) {
         shipping_rate_data: {
           type: "fixed_amount",
           fixed_amount: {
-            amount: APP_SETTINGS.freeShippingModeEnabled ? 0 : product.shipping.cost,
+            amount: product.freeShippingMode ? 0 : product.shipping.cost,
             currency: "usd",
           },
           display_name: product.shipping.name,

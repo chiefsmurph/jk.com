@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 import products, {
-  getFreeShippingPrice,
   getProductImages,
 } from "../public/products";
 
@@ -131,10 +130,7 @@ export default function HomePage() {
           {products.products.map((p) => (
             <ProductCard
               key={p.id}
-              id={p.id}
-              title={p.title}
-              price={APP_SETTINGS.freeShippingModeEnabled ? getFreeShippingPrice(p) : p.price}
-              img={getProductImages(p)[0]}
+              product={p}
             />
           ))}
         </section>

@@ -20,6 +20,7 @@ export type Product = {
     cost: number;
     estDelivery: string;
   };
+  freeShippingMode?: boolean;
 };
 
 export const getProductImages = (
@@ -27,7 +28,7 @@ export const getProductImages = (
   color: string | undefined = colorOptions[0]
 ) => (Array.isArray(images) ? images : images[color]);
 
-export const getFreeShippingPrice = ({ shipping, price }: Product) => shipping.cost / 100 + price;
+export const getDisplayPrice = ({ shipping, price }: Product) => shipping.cost / 100 + price;
 
 const products: { products: Product[] } = {
   products: [
@@ -59,6 +60,7 @@ const products: { products: Product[] } = {
         cost: 752,
         estDelivery: "8-15",
       },
+      freeShippingMode: true
     },
     {
       id: "clouds-skater-dress",
@@ -93,6 +95,7 @@ const products: { products: Product[] } = {
         cost: 399,
         estDelivery: "7-10",
       },
+      freeShippingMode: true
     },
     {
       id: "pelican-beanie-t-shirt",
@@ -152,6 +155,7 @@ const products: { products: Product[] } = {
         cost: 1453,
         estDelivery: "8-15",
       },
+      freeShippingMode: true,
     },
   ],
 };
