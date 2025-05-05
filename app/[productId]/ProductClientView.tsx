@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ProductClientView.module.css";
 import {
   getDisplayPrice,
@@ -33,6 +33,10 @@ export default function ProductClientView({
   const selectedImages = options.color
     ? getProductImages(product, options.color)
     : defaultImages;
+
+  useEffect(() => {
+    document.title = `${product.title} | Modern Orange Pineapple`;
+  }, [product.title]);
   return (
     <div className={styles.container}>
       <Link

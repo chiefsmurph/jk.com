@@ -59,7 +59,7 @@ export default function HomePage() {
         style={{ margin: "0 10vw 2rem" }}
       >
         Escape the Ordinary—Own a Collectible Piece of Paradise. <br/><br/>
-        Our apparel is unlike any other.  All prices include FREE SHIPPING.  We have partnered with some of the world's finest teams to deliver to you designs you will not find anywhere else with the highest quality and standards.
+        Our apparel is unlike any other.  We have partnered with some of the world's finest teams to deliver to you designs you will not find anywhere else with the highest quality and standards.
       </motion.p>
 
       <motion.p
