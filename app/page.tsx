@@ -2,13 +2,17 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
-import products, { getProductImages } from "../public/products";
+import products, {
+  getFreeShippingPrice,
+  getProductImages,
+} from "../public/products";
 
 import styles from "./HomeGrid.module.css";
 import "./styles.css";
 import ProductCard from "@/components/ProductCard";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import APP_SETTINGS from "@/settings";
 
 export default function HomePage() {
   const [shouldAnimate, setShouldAnimate] = useState<boolean | undefined>(
@@ -18,7 +22,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const fromClientNav = sessionStorage.getItem("fromClientNav");
-    console.log({fromClientNav})
+    console.log({ fromClientNav });
     if (fromClientNav) {
       setShouldAnimate(false);
       requestAnimationFrame(() => sessionStorage.removeItem("fromClientNav"));
@@ -47,16 +51,17 @@ export default function HomePage() {
         transition={{ duration: 0.6 }}
         className="glitch"
       >
+        <img src="/images/final bunny 180px.png"/>
         Modern Orange Pineapple
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: shouldAnimate && 0.8 }}
-        style={{ marginBottom: "2rem" }}
+        style={{ margin: "0 10vw 2rem" }}
       >
-        Escape the Ordinary—Own a Collectible Piece of Paradise. Our apparel is
-        unlike any other.
+        Escape the Ordinary—Own a Collectible Piece of Paradise. <br/><br/>
+        Our apparel is unlike any other.  All prices include FREE SHIPPING.  We have partnered with some of the world's finest teams to deliver to you designs you will not find anywhere else with the highest quality and standards.
       </motion.p>
 
       <motion.p
@@ -128,7 +133,7 @@ export default function HomePage() {
               key={p.id}
               id={p.id}
               title={p.title}
-              price={p.price}
+              price={APP_SETTINGS.freeShippingModeEnabled ? getFreeShippingPrice(p) : p.price}
               img={getProductImages(p)[0]}
             />
           ))}

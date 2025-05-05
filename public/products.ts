@@ -27,13 +27,15 @@ export const getProductImages = (
   color: string | undefined = colorOptions[0]
 ) => (Array.isArray(images) ? images : images[color]);
 
+export const getFreeShippingPrice = ({ shipping, price }: Product) => shipping.cost / 100 + price;
+
 const products: { products: Product[] } = {
   products: [
     {
       id: "clouds-in-sky-shirt",
       title: "Clouds In Sky Shirt",
       description:
-        "Bring the sky everywhere you go with this all‑over cloud print T‑shirt!\n\n- Fabric: 100% cotton\n- Regular fit with classic O‑neck\n- Fabric weight: 190 g/m²\n- Printed on demand (no minimum order)\n- Care: machine wash cold with similar colors, line dry; do not bleach; iron max 110 °C without steam",
+        "Bring the sky everywhere you go with this all‑over cloud print T‑shirt!\n\n- Fabric: 100% cotton\n- Regular fit with classic O‑neck\n- Fabric weight: 190 g/m²",
       options: {
         size: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
       },
@@ -96,7 +98,7 @@ const products: { products: Product[] } = {
       id: "pelican-beanie-t-shirt",
       title: "Pelican With Beanie T Shirt",
       description:
-        "Bring the sky everywhere you go with this all‑over cloud print T‑shirt!\n\n- Fabric: 100% cotton\n- Regular fit with classic O‑neck\n- Fabric weight: 190 g/m²\n- Printed on demand (no minimum order)\n- Care: machine wash cold with similar colors, line dry; do not bleach; iron max 110 °C without steam",
+        "Bring the sky everywhere you go with this all‑over cloud print T‑shirt!\n\n- Fabric: 100% cotton\n- Regular fit with classic O‑neck\n- Fabric weight: 190 g/m²",
       options: {
         size: ["S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"],
         color: ["Daisy", "Light Blue", "White"],

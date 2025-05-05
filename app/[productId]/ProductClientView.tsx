@@ -1,10 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./ProductPage.module.css";
-import { getProductImages, type Product } from "@/public/products";
+import styles from "./ProductClientView.module.css";
+import {
+  getFreeShippingPrice,
+  getProductImages,
+  type Product,
+} from "@/public/products";
 import Link from "next/link";
 import StripeButton from "./StripeButton";
+import APP_SETTINGS from "@/settings";
+import ProductPageBackground from "./ProductPageBackground";
 
 export type Options = { color?: string; size?: string };
 
@@ -28,7 +34,6 @@ export default function ProductClientView({
   const selectedImages = options.color
     ? getProductImages(product, options.color)
     : defaultImages;
-  console.log({ options });
   return (
     <div className={styles.container}>
       <Link
@@ -40,7 +45,7 @@ export default function ProductClientView({
       </Link>
 
       <h1 className={styles.title}>{product.title}</h1>
-      <p className={styles.price}>${product.price}</p>
+      <p className={styles.price}>${getFreeShippingPrice(product)}</p>
       <p
         className={styles.desc}
         dangerouslySetInnerHTML={{
@@ -48,8 +53,11 @@ export default function ProductClientView({
         }}
       />
       <p className={styles.shipping}>
-        Shipping: ${product.shipping.cost / 100} — Estimated:{" "}
-        {product.shipping.estDelivery} business days
+        Shipping: $
+        {APP_SETTINGS.freeShippingModeEnabled
+          ? "0.00 (free)"
+          : product.shipping.cost / 100}{" "}
+        — Estimated: {product.shipping.estDelivery} business days
       </p>
 
       <div className={styles.purchaseForm}>
@@ -83,6 +91,9 @@ export default function ProductClientView({
           <img key={src} src={src} alt="" className={styles.img} />
         ))}
       </div>
+
+      <ProductPageBackground src={selectedImages[0]} side="left" />
+      <ProductPageBackground src={selectedImages[1]} side="right" />
     </div>
   );
 }
