@@ -4,6 +4,10 @@
   padding: 24px;
 }
 
+a.home {
+  color: blue;
+}
+
 .title {
   font-size: 1.75rem;
   font-weight: 700;
@@ -50,4 +54,50 @@
 
 .button:not(:disabled):hover {
   opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+
+.select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.purchaseForm {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.buyButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.buyButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tooltip {
+  font-size: 0.875rem;
+  color: #c00;
 }

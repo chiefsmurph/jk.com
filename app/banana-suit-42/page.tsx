@@ -1,4 +1,3 @@
-// ✨app/banana-suit-42/page.tsx
 'use client';
 import { useState } from 'react';
 import { useQuery, useMutation, QueryClient, QueryClientProvider } from '@tanstack/react-query';

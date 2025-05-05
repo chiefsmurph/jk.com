@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
+import Link from "next/link";
 
 export default function RedeemPage() {
   const [step, setStep] = useState<"code" | "info" | "done">("code");
@@ -138,16 +139,20 @@ export default function RedeemPage() {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <p style={{ marginTop: "2rem" }}>
-        <a
+        <Link
           href="/"
           style={{
             color: "#ff8c00",
             textDecoration: "none",
             fontWeight: "bold",
           }}
+          onClick={() => {
+            sessionStorage.setItem("fromClientNav", "true");
+            alert('set it')
+          }}
         >
           ← Back to Home
-        </a>
+        </Link>
       </p>
     </main>
   );
