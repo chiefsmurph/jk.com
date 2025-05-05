@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
 import {
-  getDisplayPrice,
+  getTotalPrice,
   getProductImages,
   Product,
 } from "@/public/products";
@@ -13,7 +13,7 @@ type Props = {
 
 export default function ProductCard({ product }: Props) {
   const { id, title, freeShippingMode } = product;
-  const displayPrice = getDisplayPrice(product);
+  const displayPrice = getTotalPrice(product);
   const img = getProductImages(product)[0];
   return (
     <Link href={`/${id}`} className={styles.card}>

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import products, {
-  getDisplayPrice,
+  getTotalPrice,
   getProductImages,
 } from "../../../public/products";
 import { p } from "framer-motion/client";
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
               ...options,
             },
           },
-          unit_amount: Math.round(getDisplayPrice(product) * 100),
+          unit_amount: Math.round(getTotalPrice(product) * 100),
         },
         quantity: 1,
       },

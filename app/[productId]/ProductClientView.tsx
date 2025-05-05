@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import styles from "./ProductClientView.module.css";
 import {
-  getDisplayPrice,
+  getTotalPrice,
   getProductImages,
   type Product,
 } from "@/public/products";
@@ -48,7 +48,7 @@ export default function ProductClientView({
       </Link>
 
       <h1 className={styles.title}>{product.title}</h1>
-      <p className={styles.price}>${getDisplayPrice(product)}</p>
+      <p className={styles.price}>${getTotalPrice(product)}</p>
       <p
         className={styles.desc}
         dangerouslySetInnerHTML={{
@@ -81,7 +81,7 @@ export default function ProductClientView({
         ))}
 
         <StripeButton
-          productId={product.id}
+        product={product}
           disabled={missing.length > 0}
           options={options}
         />

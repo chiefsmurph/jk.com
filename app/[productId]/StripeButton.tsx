@@ -2,20 +2,36 @@
 import { useState } from "react";
 import styles from "./StripeButton.module.css";
 import { Options } from "./ProductClientView";
+import { getTotalPrice, Product } from "@/public/products";
 
 export default function StripeButton({
-  productId,
+  product,
   disabled,
   options,
 }: {
-  productId: string;
+  product: Product;
   disabled: boolean;
   options: Options;
 }) {
+  const { id: productId, title } = product;
   const [loading, setLoading] = useState(false);
 
   const checkout = async () => {
     setLoading(true);
+
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "begin_checkout", {
+        currency: "USD",
+        value: getTotalPrice(product),
+        items: [
+          {
+            item_id: productId,
+            item_name: title,
+            ...options,
+          },
+        ],
+      });
+    }
     const r = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
