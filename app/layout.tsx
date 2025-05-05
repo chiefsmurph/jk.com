@@ -5,6 +5,11 @@ import "./globals.css";
 export const metadata = {
   title: "Modern Orange Pineapple",
   description: "Inspired by the future",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
