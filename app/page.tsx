@@ -11,7 +11,6 @@ import "./styles.css";
 import ProductCard from "@/components/ProductCard";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import APP_SETTINGS from "@/settings";
 
 export default function HomePage() {
   const [shouldAnimate, setShouldAnimate] = useState<boolean | undefined>(
