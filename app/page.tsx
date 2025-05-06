@@ -17,7 +17,6 @@ export default function HomePage() {
   const [shouldAnimate, setShouldAnimate] = useState<boolean | undefined>(
     undefined
   );
-  console.log({ shouldAnimate });
 
   useEffect(() => {
     const fromClientNav = sessionStorage.getItem("fromClientNav");
@@ -53,7 +52,7 @@ export default function HomePage() {
         transition={{ delay: shouldAnimate && 2.5 }}
         className="subheader"
       >
-        <TypingText text="Escape the Ordinary—Own a Collectible Piece of Paradise." />
+        <TypingText text="Escape the Ordinary—Own a Collectible Piece of Paradise." disabled={!shouldAnimate} />
       </motion.p>
       {/* <br />
       <motion.p
