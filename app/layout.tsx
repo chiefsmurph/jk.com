@@ -5,7 +5,7 @@ import SmartBackground from "@/components/SmartBackground";
 
 export const metadata = {
   title: "Modern Orange Pineapple",
-  description: "Inspired by the future",
+  description: "Escape the Ordinary—Own a Collectible Piece of Paradise.",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-icon.png",

@@ -8,7 +8,13 @@ export async function POST(req: Request) {
 
   const newCodes = Array.from({ length: count }, () => {
     const value = generateCode(codes);
-    return { value, redeemed: false, redeemedAt: null, user: null };
+    return {
+      value,
+      redeemed: false,
+      redeemedAt: null,
+      user: null,
+      createdAt: new Date().toISOString(),
+    };
   });
   codes.push(...newCodes);
   await writeCodes(codes);
