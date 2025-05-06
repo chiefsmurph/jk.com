@@ -40,6 +40,19 @@ export default function HomePage() {
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: shouldAnimate && 5 }}
+        className="stats"
+      >
+        <u>stats</u>
+        <br />
+        date of first customer: 5/6/2025
+        <br />
+        total customers: 1<br />
+        total coupon codes redeemed: 0
+      </motion.h1>
+      <motion.h1
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: shouldAnimate && 0.8 }}
         className="glitch"
       >
@@ -52,7 +65,10 @@ export default function HomePage() {
         transition={{ delay: shouldAnimate && 2.5 }}
         className="subheader"
       >
-        <TypingText text="Escape the Ordinary—Own a Collectible Piece of Paradise." disabled={!shouldAnimate} />
+        <TypingText
+          text="Escape the Ordinary—Own a Collectible Piece of Paradise."
+          disabled={!shouldAnimate}
+        />
       </motion.p>
       {/* <br />
       <motion.p
