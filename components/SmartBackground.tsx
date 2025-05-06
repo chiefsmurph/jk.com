@@ -43,11 +43,5 @@ export default function SmartBackground() {
       playsInline
       src="/videos/underwater.mp4"
     />
-  ) : (
-    <img
-      src="/videos/underwater-thumbnail.jpg"
-      alt="background"
-      className="background-fallback"
-    />
-  );
+  ) : null;
 }

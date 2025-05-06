@@ -51,6 +51,9 @@ body {
   .subheader {
     margin: -1rem;
   }
+  .button-container > a:nth-child(1) {
+    margin-bottom: 0.75rem;
+  }
 }
 
 .button-container > * {

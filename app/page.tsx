@@ -40,7 +40,7 @@ export default function HomePage() {
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: shouldAnimate && 0.8 }}
         className="glitch"
       >
         <img src="/images/final bunny 180px.png" />
@@ -49,7 +49,7 @@ export default function HomePage() {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: shouldAnimate && 0.8 }}
+        transition={{ delay: shouldAnimate && 2.5 }}
         className="subheader"
       >
         Escape the Ordinary—Own a Collectible Piece of Paradise. <br />
@@ -62,7 +62,7 @@ export default function HomePage() {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: shouldAnimate && 1.4 }}
+        transition={{ delay: shouldAnimate && 4 }}
         style={{ marginBottom: "2rem" }}
         className="button-container"
       >
@@ -82,7 +82,7 @@ export default function HomePage() {
             fontWeight: "bold",
             boxShadow: isCouponHovered ? "0 4px 12px rgba(0,0,0,0.25)" : "none",
             transition: "all 0.3s ease",
-            marginRight: "1rem", 
+            marginRight: "1rem",
           }}
           onMouseEnter={() => setIsCouponHovered(true)}
           onMouseLeave={() => setIsCouponHovered(false)}
@@ -118,17 +118,18 @@ export default function HomePage() {
         </a>
       </motion.p>
 
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: shouldAnimate && 2 }}
-      >
-        <section className={styles.grid}>
-          {products.products.map((p) => (
+      <section className={styles.grid}>
+        {products.products.map((p, index) => (
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: shouldAnimate && 6 + index * 1 }}
+          >
             <ProductCard key={p.id} product={p} />
-          ))}
-        </section>
-      </motion.h2>
+          </motion.h2>
+        ))}
+      </section>
+
       {/* <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

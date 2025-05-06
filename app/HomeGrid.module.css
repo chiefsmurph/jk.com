@@ -5,6 +5,12 @@
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 main.main {
   padding: 3rem;
   text-align: center;
