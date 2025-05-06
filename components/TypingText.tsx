@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const TypingText = ({
   text,
@@ -9,29 +9,42 @@ export const TypingText = ({
   speed?: number;
   disabled?: boolean;
 }) => {
-  const [displayedText, setDisplayedText] = useState(disabled ? text : "");
+  const [displayedText, setDisplayedText] = useState("");
   const [completed, setCompleted] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const indexRef = useRef(0);
+
   useEffect(() => {
-    let index = 0;
-    let interval;
-    let timeout;
-    if (disabled) return;
-    timeout = setTimeout(() => {
-      interval = setInterval(() => {
-        setDisplayedText((prev) => prev + text.charAt(index));
-        index++;
-        if (index === text.length) {
-          clearInterval(interval);
+    setDisplayedText(disabled ? text : "");
+    setCompleted(disabled);
+
+    if (disabled) {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      return;
+    }
+
+    indexRef.current = 0;
+
+    timeoutRef.current = setTimeout(() => {
+      intervalRef.current = setInterval(() => {
+        const nextChar = text.charAt(indexRef.current);
+        setDisplayedText((prev) => prev + nextChar);
+        indexRef.current++;
+
+        if (indexRef.current >= text.length) {
+          clearInterval(intervalRef.current!);
           setCompleted(true);
         }
       }, speed);
     }, 3000);
 
     return () => {
-      clearInterval(interval);
-      clearTimeout(timeout);
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, []);
+  }, [text, disabled]);
 
   return (
     <>
