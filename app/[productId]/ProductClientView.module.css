@@ -2,7 +2,7 @@
   max-width: 640px;
   margin: 0 auto;
   padding: 24px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 a.home {
@@ -139,6 +139,29 @@ a.home {
   opacity: 0;
   &.loaded {
     transform: translateY(0);
-    opacity: 0.08;
+    opacity: 0.28;
   }
+}
+
+.gallery {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* Less aggressive zoom, stays within bounds */
+.img:hover {
+  transform: scale(1.6);
+  z-index: 2;
 }

@@ -2,9 +2,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
-import products, {
-  getProductImages,
-} from "../public/products";
+import products, { getProductImages } from "../public/products";
 
 import styles from "./HomeGrid.module.css";
 import "./styles.css";
@@ -13,6 +11,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function HomePage() {
+  const [isCouponHovered, setIsCouponHovered] = useState(false);
+  const [isHoveredBtn2, setIsHoveredBtn2] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState<boolean | undefined>(
     undefined
   );
@@ -30,13 +30,7 @@ export default function HomePage() {
   }, []);
   if (shouldAnimate === undefined) return null; // or show loader if desired
   return (
-    <main
-      style={{
-        textAlign: "center",
-        padding: "3rem",
-        fontFamily: "Orbitron, sans-serif",
-      }}
-    >
+    <main className={styles.main}>
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
@@ -49,17 +43,20 @@ export default function HomePage() {
         transition={{ duration: 0.6 }}
         className="glitch"
       >
-        <img src="/images/final bunny 180px.png"/>
+        <img src="/images/final bunny 180px.png" />
         Modern Orange Pineapple
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: shouldAnimate && 0.8 }}
-        style={{ margin: "0 10vw 2rem" }}
+        className="subheader"
       >
-        Escape the Ordinary—Own a Collectible Piece of Paradise. <br/><br/>
-        Our apparel is unlike any other.  We have partnered with some of the world's finest teams to deliver to you designs you will not find anywhere else with the highest quality and standards.
+        Escape the Ordinary—Own a Collectible Piece of Paradise. <br />
+        <br />
+        Our apparel is unlike any other. We have partnered with some of the
+        world's finest teams to deliver to you designs you will not find
+        anywhere else with the highest quality and standards.
       </motion.p>
 
       <motion.p
@@ -67,32 +64,31 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         transition={{ delay: shouldAnimate && 1.4 }}
         style={{ marginBottom: "2rem" }}
+        className="button-container"
       >
         <Link
           href="/redeem"
           style={{
             display: "inline-block",
-            marginTop: "2rem",
             padding: "0.75rem 1.5rem",
             border: "2px solid #ff8c00",
             borderRadius: "8px",
             fontFamily: "Orbitron, sans-serif",
-            color: "#ff8c00",
+            color: isCouponHovered ? "white" : "#fff", // white text always visible
+            backgroundColor: isCouponHovered
+              ? "#ff8c00"
+              : "linear-gradient(to bottom, #ff8c00aa, #ff8c0055)", // soft warm gradient
             textDecoration: "none",
+            fontWeight: "bold",
+            boxShadow: isCouponHovered ? "0 4px 12px rgba(0,0,0,0.25)" : "none",
             transition: "all 0.3s ease",
+            marginRight: "1rem", 
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#ff8c00";
-            e.currentTarget.style.color = "white";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.color = "#ff8c00";
-          }}
+          onMouseEnter={() => setIsCouponHovered(true)}
+          onMouseLeave={() => setIsCouponHovered(false)}
         >
           Redeem a Coupon Code
         </Link>
-        &nbsp;&nbsp;
         <a
           href="https://www.instagram.com/modernorangepineapple"
           target="_blank"
@@ -102,19 +98,21 @@ export default function HomePage() {
             padding: "0.75rem 1.5rem",
             border: "2px solid #E1306C",
             borderRadius: "8px",
-            color: "#E1306C",
-            textDecoration: "none",
             fontFamily: "Orbitron, sans-serif",
+            color: isHoveredBtn2 ? "white" : "#E1306C",
+            backgroundColor: isHoveredBtn2
+              ? "#E1306C"
+              : "rgba(225, 48, 108, 0.1)", // base color subtle
+            textDecoration: "none",
+            fontWeight: "bold",
+            boxShadow: isHoveredBtn2
+              ? "0 4px 12px rgba(0, 0, 0, 0.25)"
+              : "none",
             transition: "all 0.3s ease",
+            textShadow: isHoveredBtn2 ? "0 0 8px #fff" : "none",
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#E1306C";
-            e.currentTarget.style.color = "white";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.color = "#E1306C";
-          }}
+          onMouseEnter={() => setIsHoveredBtn2(true)}
+          onMouseLeave={() => setIsHoveredBtn2(false)}
         >
           Follow us on Instagram
         </a>
@@ -127,10 +125,7 @@ export default function HomePage() {
       >
         <section className={styles.grid}>
           {products.products.map((p) => (
-            <ProductCard
-              key={p.id}
-              product={p}
-            />
+            <ProductCard key={p.id} product={p} />
           ))}
         </section>
       </motion.h2>
