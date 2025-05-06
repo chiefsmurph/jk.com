@@ -1,4 +1,4 @@
-import { buffer } from "micro";
+import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import Stripe from "stripe";
@@ -10,22 +10,21 @@ export const config = {
 };
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
-export default async function handler(req, res) {
+export async function POST(req: NextRequest, res: NextResponse) {
   const sig = req.headers["stripe-signature"]!;
-  const buf = await buffer(req);
+  const body = await req.text();
 
   let event: Stripe.Event;
 
   try {
     event = stripe.webhooks.constructEvent(
-      buf,
+      body,
       sig,
       process.env.STRIPE_WEBHOOK_SECRET!
     );
   } catch (err) {
     console.error("Webhook Error:", err.message);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    return new NextResponse(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
   if (event.type === "checkout.session.completed") {
@@ -45,7 +44,8 @@ export default async function handler(req, res) {
       payment_status: session.payment_status,
       metadata: session.metadata,
       lineItemDesc: (session.line_items[0] as Stripe.LineItem).description,
-      lineItemPriceProduct: (session.line_items[0] as Stripe.LineItem).price.product,
+      lineItemPriceProduct: (session.line_items[0] as Stripe.LineItem).price
+        .product,
       status: session.status,
       mode: session.mode,
     };
@@ -70,6 +70,5 @@ export default async function handler(req, res) {
       console.error("Failed to write order file:", err);
     }
   }
-
-  res.status(200).json({ received: true });
+  return NextResponse.json({ received: true });
 }
