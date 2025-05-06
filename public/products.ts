@@ -28,7 +28,7 @@ export const getProductImages = (
   color: string | undefined = colorOptions[0]
 ) => (Array.isArray(images) ? images : images[color]);
 
-export const getTotalPrice = ({ shipping, price }: Product) => shipping.cost / 100 + price;
+export const getTotalPrice = ({ shipping, price }: Product) => parseFloat((shipping.cost / 100 + price).toFixed(2));
 
 const products: { products: Product[] } = {
   products: [

@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
               ...options,
             },
           },
-          unit_amount: Math.round(getTotalPrice(product) * 100),
+          unit_amount: Math.round(Number(getTotalPrice(product) * 100)),
         },
         quantity: 1,
       },
