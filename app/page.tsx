@@ -9,6 +9,7 @@ import "./styles.css";
 import ProductCard from "@/components/ProductCard";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { TypingText } from "@/components/TypingText";
 
 export default function HomePage() {
   const [isCouponHovered, setIsCouponHovered] = useState(false);
@@ -52,18 +53,26 @@ export default function HomePage() {
         transition={{ delay: shouldAnimate && 2.5 }}
         className="subheader"
       >
-        Escape the Ordinary—Own a Collectible Piece of Paradise. <br />
-        <br />
-        Our apparel is unlike any other. We have partnered with some of the
-        world's finest teams to deliver to you designs you will not find
-        anywhere else with the highest quality and standards.
+        <TypingText text="Escape the Ordinary—Own a Collectible Piece of Paradise." />
       </motion.p>
+      {/* <br />
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: shouldAnimate && 3.5 }}
+        className="subheader"
+      >
+        <TypingText
+          text="Our apparel is unlike any other. We have partnered with some of the
+        world's finest teams to deliver to you designs you will not find
+        anywhere else with the highest quality and standards."
+        />
+      </motion.p> */}
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: shouldAnimate && 4 }}
-        style={{ marginBottom: "2rem" }}
+        transition={{ delay: shouldAnimate && 6 }}
         className="button-container"
       >
         <Link
@@ -123,7 +132,7 @@ export default function HomePage() {
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: shouldAnimate && 6 + index * 1 }}
+            transition={{ delay: shouldAnimate && 8 + index * 1 }}
           >
             <ProductCard key={p.id} product={p} />
           </motion.h2>
