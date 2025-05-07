@@ -43,12 +43,9 @@ export default function HomePage() {
         transition={{ duration: 0.6, delay: shouldAnimate && 5 }}
         className="stats"
       >
-        <u>stats</u>
-        <br />
-        date of first customer: 5/6/2025
-        <br />
-        total customers: 1<br />
-        total coupon codes redeemed: 0
+        <u>stats</u><br/>
+        total orders: 1<br />
+        coupon codes redeemed: 0
       </motion.h1>
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
