@@ -1,0 +1,35 @@
+.sliderWrapper {
+  width: 100%;
+  margin-left: -100px;
+  aspect-ratio: 3 / 2; /* Or remove and use natural height */
+  /* overflow: hidden; */
+
+  & :global(.keen-slider) {
+    display: flex;
+    overflow: visible !important;
+  }
+
+  & :global(.keen-slider__slide) {
+    min-width: 96.6% !important;
+    max-width: 96.6% !important;
+    overflow: visible !important;
+  }
+
+  & :global(.keen-slider__slide img) {
+    width: 130%;
+    height: auto;
+    /* min-height: 400px; */
+    object-fit: contain;
+    /* max-height: 400px; Tweak this if needed */
+  }
+}
+.sliderWrapper::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+  pointer-events: none;
+}

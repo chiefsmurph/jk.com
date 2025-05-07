@@ -5,6 +5,8 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+
+
 a.home {
   color: blue;
 }
@@ -111,6 +113,9 @@ a.home {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-bottom: 200px;
+  }
   .background-ghost {
     display: none;
   }
@@ -130,7 +135,7 @@ a.home {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(2, 1fr);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }
 
@@ -147,4 +152,26 @@ a.home {
 .img:hover {
   transform: scale(1.6);
   z-index: 2;
+}
+.productPage {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .productPage {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .textSide {
+    flex: 1;
+  }
+
+  .gallerySide {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 }

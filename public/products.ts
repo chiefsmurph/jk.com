@@ -151,7 +151,7 @@ const products: { products: Product[] } = {
       id: "blue-sky-cotton-shorts",
       title: "Blue Sky Cotton Shorts",
       description:
-        "Made of natural fiber fabric, it is comfortable and breathable, and will not tighten when worn against the skin. The elastic belt at the waist can be freely adjusted. Pair it with casual tops or sweatshirts to wear in many scenarios.\n\n- Fabric: 100% cotton\n- Regular fit\n- Side pocket, back pocket, waist elastic\n- Fabric: 245 g/m²\n- Care: machine wash cold with similar colors, do not bleach, tumble dry low, do not iron, do not dry clean",
+        "Made of natural fiber fabric, it is comfortable and breathable, and will not tighten when worn against the skin.  Pair it with casual tops or sweatshirts to wear in many scenarios.\n\n- Fabric: 100% cotton\n- Regular fit\n- Side pocket, back pocket, waist elastic\n- Fabric: 245 g/m²",
       options: {
         size: ["S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"],
       },

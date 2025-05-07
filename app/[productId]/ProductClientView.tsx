@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./ProductClientView.module.css";
 import {
   getTotalPrice,
   getProductImages,
@@ -10,6 +9,8 @@ import {
 import Link from "next/link";
 import ProductPageBackground from "./ProductPageBackground";
 import PurchaseForm from "./PurchaseForm";
+import ProductGallery from "@/components/ProductGallery2";
+import styles from "./ProductClientView.module.css";
 
 export type Options = { color?: string; size?: string };
 
@@ -41,12 +42,23 @@ export default function ProductClientView({
 
       <h1 className={styles.title}>{product.title}</h1>
       <p className={styles.price}>${getTotalPrice(product)}</p>
-      <p
-        className={styles.desc}
-        dangerouslySetInnerHTML={{
-          __html: product.description.split("\n").join("<br/>"),
-        }}
-      />
+      <div className={styles.productPage}>
+        <div className={styles.textSide}>
+          <p
+            className={styles.desc}
+            dangerouslySetInnerHTML={{
+              __html: product.description.split("\n").join("<br/>"),
+            }}
+          />
+          {/* price, sizes, buy button etc */}
+        </div>
+        <div className={styles.gallerySide}>
+          <ProductGallery
+            images={getProductImages(product, options["color"])}
+          />
+        </div>
+      </div>
+
       <p className={styles.shipping}>
         Shipping: $
         {product.freeShippingMode ? "0.00 (free)" : product.shipping.cost / 100}{" "}
@@ -58,12 +70,11 @@ export default function ProductClientView({
         options={options}
         setOptions={setOptions}
       />
-
-      <div className={styles.gallery}>
+      {/* <div className={styles.gallery}>
         {selectedImages.map((src) => (
           <img key={src} src={src} alt="" className={styles.img} />
         ))}
-      </div>
+      </div> */}
 
       <ProductPageBackground src={selectedImages[0]} side="left" />
       <ProductPageBackground src={selectedImages[1]} side="right" />
