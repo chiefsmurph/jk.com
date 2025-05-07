@@ -85,8 +85,8 @@ const products: { products: Product[] } = {
         "/images/clouds-skater-dress/erasebg-transformed(8).png",
         "/images/clouds-skater-dress/erasebg-transformed.png",
         "/images/clouds-skater-dress/erasebg-transformed (6).png",
-        "/images/clouds-skater-dress/erasebg-transformed (4).png ",
-        "/images/clouds-skater-dress/erasebg-transformed (7).png ",
+        "/images/clouds-skater-dress/erasebg-transformed (4).png",
+        "/images/clouds-skater-dress/erasebg-transformed (7).png",
         // "/images/clouds-skater-dress/all-over-print-skater-dress-white-back-6817d7c9a62ed.jpg",
         // "/images/clouds-skater-dress/all-over-print-skater-dress-white-back-6817d7c9a643a.jpg",
         // "/images/clouds-skater-dress/all-over-print-skater-dress-white-back-6817d7c9a6395.jpg",
@@ -162,7 +162,7 @@ const products: { products: Product[] } = {
       },
       images: [
 
-        "/images/blue-sky-cotton-shorts/erasebg-transformed(3).webp ",
+        "/images/blue-sky-cotton-shorts/erasebg-transformed(3).webp",
         "/images/blue-sky-cotton-shorts/erasebg-transformed (1).webp",
         "/images/blue-sky-cotton-shorts/erasebg-transformed.webp",
         "/images/blue-sky-cotton-shorts/erasebg-transformed (2).webp",
