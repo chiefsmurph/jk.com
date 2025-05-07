@@ -114,6 +114,7 @@ a.home {
 
 @media (max-width: 768px) {
   .container {
+    overflow: hidden;
     padding-bottom: 200px;
   }
   .background-ghost {

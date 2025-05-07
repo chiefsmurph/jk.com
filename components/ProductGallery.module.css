@@ -6,30 +6,30 @@
 
   & :global(.keen-slider) {
     /* display: flex; */
-    padding-right: 200px;
+    padding-right: 100px;
+    /* &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+      pointer-events: none;
+    } */
   }
 
   & :global(.keen-slider__slide) {
     overflow: visible !important;
-    min-width: 96.6% !important;
-    max-width: 96.6% !important;
+    min-width: 76.6% !important;
+    max-width: 76.6% !important;
   }
 
   & :global(.keen-slider__slide img) {
-    width: 130%;
+    width: 180%;
     height: auto;
     /* min-height: 400px; */
     object-fit: contain;
     /* max-height: 400px; Tweak this if needed */
   }
-}
-.sliderWrapper::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 30px;
-  height: 100%;
-  background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
-  pointer-events: none;
 }
