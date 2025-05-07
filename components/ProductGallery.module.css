@@ -5,14 +5,14 @@
   /* overflow: hidden; */
 
   & :global(.keen-slider) {
-    display: flex;
-    overflow: visible !important;
+    /* display: flex; */
+    padding-right: 200px;
   }
 
   & :global(.keen-slider__slide) {
+    overflow: visible !important;
     min-width: 96.6% !important;
     max-width: 96.6% !important;
-    overflow: visible !important;
   }
 
   & :global(.keen-slider__slide img) {

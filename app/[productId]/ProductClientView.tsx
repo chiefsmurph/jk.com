@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import ProductPageBackground from "./ProductPageBackground";
 import PurchaseForm from "./PurchaseForm";
-import ProductGallery from "@/components/ProductGallery2";
+import ProductGallery from "@/components/ProductGallery";
 import styles from "./ProductClientView.module.css";
 
 export type Options = { color?: string; size?: string };
