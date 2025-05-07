@@ -46,7 +46,7 @@ const products: { products: Product[] } = {
         productId: "ID LRVV1",
       },
       images: [
-        "/images/clouds-in-sky-shirt/erasebg-transformed (3).png",
+        "/images/clouds-in-sky-shirt/erasebg-transformed(3).png",
         "/images/clouds-in-sky-shirt/erasebg-transformed (2).png",
 
         // "/images/clouds-in-sky-shirt/erasebg-transformed.png",
@@ -82,7 +82,7 @@ const products: { products: Product[] } = {
         productTemplate: "73677360",
       },
       images: [
-        "/images/clouds-skater-dress/erasebg-transformed (8).png ",
+        "/images/clouds-skater-dress/erasebg-transformed(8).png ",
         "/images/clouds-skater-dress/erasebg-transformed.png",
         "/images/clouds-skater-dress/erasebg-transformed (6).png",
         "/images/clouds-skater-dress/erasebg-transformed (4).png ",
@@ -125,18 +125,18 @@ const products: { products: Product[] } = {
       images: {
         Yellow: [
 
-          "/images/pelican-beanie-t-shirt/erasebg-transformed (11).png",
+          "/images/pelican-beanie-t-shirt/erasebg-transformed(11).png",
           // "/images/pelican-beanie-t-shirt/daisy/il_1588xN.6686801694_cpd5.webp",
           // "/images/pelican-beanie-t-shirt/daisy/il_1588xN.6686801682_bqee.webp",
         ],
         "Light Blue": [
 
-          "/images/pelican-beanie-t-shirt/erasebg-transformed (10).png",
+          "/images/pelican-beanie-t-shirt/erasebg-transformed(10).png",
           // "/images/pelican-beanie-t-shirt/light-blue/il_1588xN.6734837877_7y1l.webp",
           // "/images/pelican-beanie-t-shirt/light-blue/il_1588xN.6734837865_ht7s.webp",
         ],
         White: [
-          "/images/pelican-beanie-t-shirt/erasebg-transformed (9).png",
+          "/images/pelican-beanie-t-shirt/erasebg-transformed(9).png",
           // "/images/pelican-beanie-t-shirt/white/il_1588xN.6686801766_2ahp.webp",
           // "/images/pelican-beanie-t-shirt/white/il_1588xN.6686801752_4apr.webp",
         ],
@@ -162,7 +162,7 @@ const products: { products: Product[] } = {
       },
       images: [
 
-        "/images/blue-sky-cotton-shorts/erasebg-transformed (3).webp ",
+        "/images/blue-sky-cotton-shorts/erasebg-transformed(3).webp ",
         "/images/blue-sky-cotton-shorts/erasebg-transformed (1).webp",
         "/images/blue-sky-cotton-shorts/erasebg-transformed.webp",
         "/images/blue-sky-cotton-shorts/erasebg-transformed (2).webp",
