@@ -82,7 +82,7 @@ const products: { products: Product[] } = {
         productTemplate: "73677360",
       },
       images: [
-        "/images/clouds-skater-dress/erasebg-transformed(8).png ",
+        "/images/clouds-skater-dress/erasebg-transformed(8).png",
         "/images/clouds-skater-dress/erasebg-transformed.png",
         "/images/clouds-skater-dress/erasebg-transformed (6).png",
         "/images/clouds-skater-dress/erasebg-transformed (4).png ",
