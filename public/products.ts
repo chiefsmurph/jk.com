@@ -28,7 +28,8 @@ export const getProductImages = (
   color: string | undefined = colorOptions[0]
 ) => (Array.isArray(images) ? images : images[color]);
 
-export const getTotalPrice = ({ shipping, price }: Product) => parseFloat((shipping.cost / 100 + price).toFixed(2));
+export const getTotalPrice = ({ shipping, price }: Product) =>
+  parseFloat((shipping.cost / 100 + price).toFixed(2));
 
 const products: { products: Product[] } = {
   products: [
@@ -66,7 +67,7 @@ const products: { products: Product[] } = {
         cost: 752,
         estDelivery: "8-15",
       },
-      freeShippingMode: true
+      freeShippingMode: true,
     },
     {
       id: "clouds-skater-dress",
@@ -82,11 +83,13 @@ const products: { products: Product[] } = {
         productTemplate: "73677360",
       },
       images: [
-        "/images/clouds-skater-dress/erasebg-transformed(8).png",
-        "/images/clouds-skater-dress/erasebg-transformed.png",
-        "/images/clouds-skater-dress/erasebg-transformed (6).png",
-        "/images/clouds-skater-dress/erasebg-transformed (4).png",
-        "/images/clouds-skater-dress/erasebg-transformed (7).png",
+        "/images/clouds-skater-dress/all-over-print-skater-dress-white-front.png",
+        "/images/clouds-skater-dress/all-over-print-skater-dress-white-back.png",
+        // "/images/clouds-skater-dress/erasebg-transformed(8).png",
+        // "/images/clouds-skater-dress/erasebg-transformed.png",
+        // "/images/clouds-skater-dress/erasebg-transformed (6).png",
+        // "/images/clouds-skater-dress/erasebg-transformed (4).png",
+        // "/images/clouds-skater-dress/erasebg-transformed (7).png",
         // "/images/clouds-skater-dress/all-over-print-skater-dress-white-back-6817d7c9a62ed.jpg",
         // "/images/clouds-skater-dress/all-over-print-skater-dress-white-back-6817d7c9a643a.jpg",
         // "/images/clouds-skater-dress/all-over-print-skater-dress-white-back-6817d7c9a6395.jpg",
@@ -106,7 +109,7 @@ const products: { products: Product[] } = {
         cost: 399,
         estDelivery: "7-10",
       },
-      freeShippingMode: true
+      freeShippingMode: true,
     },
     {
       id: "pelican-beanie-t-shirt",
@@ -124,13 +127,11 @@ const products: { products: Product[] } = {
       },
       images: {
         Yellow: [
-
           "/images/pelican-beanie-t-shirt/erasebg-transformed(11).png",
           // "/images/pelican-beanie-t-shirt/daisy/il_1588xN.6686801694_cpd5.webp",
           // "/images/pelican-beanie-t-shirt/daisy/il_1588xN.6686801682_bqee.webp",
         ],
         "Light Blue": [
-
           "/images/pelican-beanie-t-shirt/erasebg-transformed(10).png",
           // "/images/pelican-beanie-t-shirt/light-blue/il_1588xN.6734837877_7y1l.webp",
           // "/images/pelican-beanie-t-shirt/light-blue/il_1588xN.6734837865_ht7s.webp",
@@ -161,7 +162,6 @@ const products: { products: Product[] } = {
         productId: "ID LRWGN",
       },
       images: [
-
         "/images/blue-sky-cotton-shorts/erasebg-transformed(3).webp",
         "/images/blue-sky-cotton-shorts/erasebg-transformed (1).webp",
         "/images/blue-sky-cotton-shorts/erasebg-transformed.webp",
@@ -180,7 +180,6 @@ const products: { products: Product[] } = {
       freeShippingMode: true,
     },
   ],
-  
 };
 
 export default products;

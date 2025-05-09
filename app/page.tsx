@@ -28,6 +28,17 @@ export default function HomePage() {
       setShouldAnimate(true);
     }
   }, []);
+  useEffect(() => {
+    if (shouldAnimate === false) {
+      document.body.classList.remove("loading");
+    } else {
+      document.body.classList.add("loading");
+      const timeout = setTimeout(() => {
+        document.body.classList.remove("loading");
+      }, 10000); // however long your max animation takes
+      return () => clearTimeout(timeout);
+    }
+  }, [shouldAnimate]);
   if (shouldAnimate === undefined) return null; // or show loader if desired
   return (
     <main className={styles.main}>
@@ -43,7 +54,8 @@ export default function HomePage() {
         transition={{ duration: 0.6, delay: shouldAnimate && 5 }}
         className="stats"
       >
-        <u>stats</u><br/>
+        <u>stats</u>
+        <br />
         total orders: 1<br />
         coupon codes redeemed: 0
       </motion.h1>
@@ -149,6 +161,55 @@ export default function HomePage() {
             <ProductCard key={p.id} product={p} />
           </motion.h2>
         ))}
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: shouldAnimate && 8 + products.products.length }}
+        >
+          {" "}
+          <div className="product-card featured-store">
+            <a
+              href="https://www.google.com/maps?q=Under the Sea Gallery, 833 b, 725 Embarcadero, Morro Bay, CA 93442"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <video
+                src="/videos/underthesea.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  width: "100%",
+                  maxWidth: "400px",
+                  borderRadius: "12px",
+                  margin: "auto",
+                  display: "block",
+                }}
+              />
+              <p className="store-caption">
+                <b>
+                  Premium Pelican In Clouds
+                  <br />
+                  Morro Bay Edition
+                </b>
+                <br />
+                <br />
+                Now available at{" "}
+                <strong>Harborwalk Convenience / Under The Sea Gallery</strong>
+                <br />
+                in Morro Bay, California – tap for directions&nbsp;
+                <a
+                  href="https://undertheseagallery.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  or here specifically to go to their website
+                </a>
+              </p>
+            </a>
+          </div>
+        </motion.h2>
       </section>
 
       {/* <motion.h2
