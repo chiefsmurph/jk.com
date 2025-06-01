@@ -66,7 +66,7 @@ export default function HomePage() {
         className="glitch"
       >
         {/* <img src="/images/final bunny 180px.png" /> */}
-        MOP Clothing
+       mopclothing.com
         <hr />
         <i>Modern Orange Pineapple</i>
       </motion.h1>

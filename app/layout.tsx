@@ -4,7 +4,7 @@ import "./globals.css";
 import SmartBackground from "@/components/SmartBackground";
 
 export const metadata = {
-  title: "Modern Orange Pineapple",
+  title: "MOP Clothing",
   description: "Escape the Ordinary—Own a Collectible Piece of Paradise.",
   icons: {
     icon: "/favicon.ico",
