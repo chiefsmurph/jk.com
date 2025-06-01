@@ -41,8 +41,7 @@ export default function SmartBackground() {
       muted
       loop
       playsInline
-      src="/videos/underwater.mp4"
-      type="video/mp4"
+      src={`/videos/underwater.mp4?${new Date().toLocaleDateString()}`}
     />
   ) : null;
 }
