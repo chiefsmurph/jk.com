@@ -42,6 +42,7 @@ export default function SmartBackground() {
       loop
       playsInline
       src="/videos/underwater.mp4"
+      type="video/mp4"
     />
   ) : null;
 }

@@ -48,7 +48,7 @@ export default function HomePage() {
           rel="stylesheet"
         />
       </Head>
-      <motion.h1
+      {/* <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: shouldAnimate && 5 }}
@@ -58,15 +58,17 @@ export default function HomePage() {
         <br />
         total orders: 1<br />
         coupon codes redeemed: 0
-      </motion.h1>
+      </motion.h1> */}
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: shouldAnimate && 0.8 }}
         className="glitch"
       >
-        <img src="/images/final bunny 180px.png" />
-        Modern Orange Pineapple
+        {/* <img src="/images/final bunny 180px.png" /> */}
+        MOP Clothing
+        <hr />
+        <i>Modern Orange Pineapple</i>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
@@ -79,24 +81,38 @@ export default function HomePage() {
           disabled={!shouldAnimate}
         />
       </motion.p>
-      {/* <br />
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: shouldAnimate && 3.5 }}
-        className="subheader"
-      >
-        <TypingText
-          text="Our apparel is unlike any other. We have partnered with some of the
-        world's finest teams to deliver to you designs you will not find
-        anywhere else with the highest quality and standards."
-        />
-      </motion.p> */}
 
+      <br />
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: shouldAnimate && 6 }}
+        className="subheader"
+      >
+        <p>
+          {" "}
+          Modern Orange Pineapple is an apparel brand born from a love of art —
+          and a frustration with how hard it is to find clothing that’s both
+          interesting and made from natural materials. We highlight when items
+          aren't 100% cotton or organic, because we think that should be clear.
+        </p>
+        <p>
+          It started with a painted star. Then came a smoking alpaca. Then a
+          pelican — who later (sometimes) wears a beanie. Each piece is a
+          creative swing at making fashion feel artistic, cool, and quietly bold
+          — without being childish or overdone.
+        </p>
+        <p>
+          Who knows what’s next? One thing’s for sure: it’s going to put a smile
+          on your face — and very possibly have strangers stopping to say “I
+          love your shirt” or giving you a thumbs up as they pass.
+        </p>
+      </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: shouldAnimate && 8 }}
         className="button-container"
       >
         <Link
@@ -156,7 +172,7 @@ export default function HomePage() {
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: shouldAnimate && 8 + index * 1 }}
+            transition={{ delay: shouldAnimate && 10 + index * 1 }}
           >
             <ProductCard key={p.id} product={p} />
           </motion.h2>
@@ -164,7 +180,7 @@ export default function HomePage() {
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: shouldAnimate && 8 + products.products.length }}
+          transition={{ delay: shouldAnimate && 10 + products.products.length }}
         >
           {" "}
           <div className="product-card featured-store">

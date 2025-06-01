@@ -16,6 +16,11 @@ body.loading {
   overflow: hidden;
 }
 
+hr {
+  color: black;
+  border: 2px dashed rgba(255,255,255, 0.2);
+}
+
 .underwaterVideo {
   position: fixed;
   top: 0;
@@ -58,9 +63,6 @@ body.loading {
 }
 
 @media (max-width: 768px) {
-  .subheader {
-    margin: -1rem;
-  }
   .button-container > a:nth-child(1) {
     margin-bottom: 0.75rem;
   }
