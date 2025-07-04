@@ -12,8 +12,17 @@
       0 0 12px yellow,
       0 0 16px yellow,
       0 0 32px yellow,
-      0 0 48px yellow,
+      0 0 28px yellow,
       0 0 12px yellow;
+  }
+}
+
+@keyframes sizeGlow {
+  0%, 100% {
+      transform: scale(1.02) 
+  }
+  50% {
+      transform: scale(1) 
   }
 }
 
@@ -28,7 +37,9 @@
   position: relative;
   z-index: 100;
   /* animate the glow */
-  animation: boldGlow 5.5s ease-in-out infinite alternate;
+  animation: 
+    boldGlow 5.5s ease-in-out infinite alternate,
+    sizeGlow 10.5s ease-in-out infinite alternate;
 }
 
 .glitch img {

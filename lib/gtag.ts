@@ -4,7 +4,7 @@ declare global {
     }
   }
   
-  export const GA_TRACKING_ID = 'G-R8MHSN0N8Q'; // replace with your ID
+  export const GA_TRACKING_ID = 'G-8CC7B35586'; // replace with your ID
   
   export const pageview = (url: string) => {
     if (typeof window.gtag === 'function') {
