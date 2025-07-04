@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 
 export const TypingText = ({
@@ -38,7 +39,7 @@ export const TypingText = ({
           setCompleted(true);
         }
       }, speed);
-    }, 3000);
+    }, 2000);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);

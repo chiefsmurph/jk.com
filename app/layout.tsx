@@ -1,10 +1,9 @@
 import { QueryProvider } from "@/components/QueryProvider";
 import { Analytics } from "@/components/Analytics";
 import "./globals.css";
-import SmartBackground from "@/components/SmartBackground";
 
 export const metadata = {
-  title: "MOP Clothing",
+  title: "Johnny Keeys - actor, musician",
   description: "Escape the Ordinary—Own a Collectible Piece of Paradise.",
   icons: {
     icon: "/favicon.ico",
@@ -23,8 +22,6 @@ export default function RootLayout({
       <body>
         <QueryProvider>{children}</QueryProvider>
         <Analytics />
-        <SmartBackground/>
-        <div className="overlay" />
       </body>
     </html>
   );

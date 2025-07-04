@@ -9,20 +9,29 @@
   }
   50% {
     text-shadow:
-      0 0 16px #ffaa33,
-      0 0 32px #ffaa33,
-      0 0 48px #ffaa33,
-      0 0 64px #ffaa33,
-      0 0 80px #ffaa33;
+      0 0 12px yellow,
+      0 0 16px yellow,
+      0 0 32px yellow,
+      0 0 48px yellow,
+      0 0 12px yellow;
   }
 }
 
 .glitch {
-  font-size: 3.5rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 4.5rem;
   font-weight: 900;
-  color: white;
-  animation: boldGlow 3.5s ease-in-out infinite;
-  font-family: 'Orbitron', sans-serif;
+  color: #fff;
   letter-spacing: 1px;
   user-select: none;
+  margin: -3.5rem 0 0;
+  position: relative;
+  z-index: 100;
+  /* animate the glow */
+  animation: boldGlow 5.5s ease-in-out infinite alternate;
+}
+
+.glitch img {
+  filter: drop-shadow(0 0 16px rgba(255, 185, 0, 0.6));
+  margin-left: 38px;
 }
