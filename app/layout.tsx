@@ -6,10 +6,10 @@ export const metadata = {
   title: "Johnny Keeys - actor, musician",
   description: "Escape the Ordinary—Own a Collectible Piece of Paradise.",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
+    icon: "/favicon/favicon.ico",
+    apple: "/favicon/apple-icon.png",
   },
-  manifest: "/manifest.json",
+  manifest: "/favicon/manifest.json",
 };
 
 export default function RootLayout({

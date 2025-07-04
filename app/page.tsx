@@ -25,7 +25,7 @@ export default function HomePage() {
         className="glitch"
       >
         <Image
-          src="/images/transparent baker park with shades.png"
+          src="/images/transparent baker park with shades 2.png"
           alt="Johnny Keeys picture"
           width={300}
           height={300}
