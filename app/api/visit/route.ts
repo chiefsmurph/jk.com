@@ -33,3 +33,11 @@ export async function POST(req: NextRequest) {
     return new NextResponse('Error updating stats', { status: 500 })
   }
 }
+
+export async function GET() {
+  const stats = JSON.parse(fs.readFileSync(statsFile, 'utf-8'))
+  return NextResponse.json({
+    totalVisits: stats.totalVisits,
+    uniqueVisitors: stats.uniqueVisitors.length
+  })
+}

@@ -19,10 +19,15 @@ export default function HomePage() {
     const now = Date.now();
     const lastVisit = parseInt(localStorage.getItem(VISIT_KEY) || "0", 10);
 
-    if (isNaN(lastVisit) || now - lastVisit > FIVE_MINUTES) {
-      fetch("/api/visit", { method: "POST" })
-        .then((response) => response.json())
-        .then(setStats);
+    const shouldPost = isNaN(lastVisit) || now - lastVisit > FIVE_MINUTES;
+
+    const method = shouldPost ? "POST" : "GET";
+
+    fetch("/api/visit", { method })
+      .then((res) => res.json())
+      .then(setStats);
+
+    if (shouldPost) {
       localStorage.setItem(VISIT_KEY, now.toString());
     }
   }, []);
