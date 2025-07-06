@@ -17,7 +17,7 @@ export default function HomePage() {
     const VISIT_KEY = "last_visit_timestamp";
     const FIVE_MINUTES = 5 * 60 * 1000;
     const now = Date.now();
-    const lastVisit = 1 || parseInt(localStorage.getItem(VISIT_KEY) || "0", 10);
+    const lastVisit = parseInt(localStorage.getItem(VISIT_KEY) || "0", 10);
 
     if (isNaN(lastVisit) || now - lastVisit > FIVE_MINUTES) {
       fetch("/api/visit", { method: "POST" })
