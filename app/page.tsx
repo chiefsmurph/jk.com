@@ -6,7 +6,7 @@ import styles from "./App.module.css";
 import "./styles.css";
 import { TypingText } from "@/components/TypingText";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 // import { TypingText } from "@/components/TypingText";
 
 export default function HomePage() {
@@ -30,6 +30,19 @@ export default function HomePage() {
     if (shouldPost) {
       localStorage.setItem(VISIT_KEY, now.toString());
     }
+  }, []);
+
+  const [johnnyPic, setJohnnyPic] = useState(
+    "/images/me cool transparent PXL_20250516_230136376.png"
+  );
+
+  useEffect(() => {
+    const images = [
+      "/images/me cool transparent PXL_20250516_230136376.png",
+      "/images/chill suit.png",
+    ];
+    const randomIndex = Math.round(Math.random() * 1);
+    setJohnnyPic(images[randomIndex]);
   }, []);
   return (
     <>
@@ -74,10 +87,10 @@ export default function HomePage() {
           className="glitch"
         >
           <Image
-            src="/images/transparent baker park with shades 2.png"
+            src={johnnyPic}
             alt="Johnny Keeys picture"
-            width={300}
-            height={300}
+            width={400}
+            height={500}
           />
         </motion.div>
         <motion.h1
