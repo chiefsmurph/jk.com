@@ -12,7 +12,7 @@ import { useEffect, useMemo, useState } from "react";
 export default function HomePage() {
   const shouldAnimate = true;
   const [stats, setStats] = useState<any>();
-  const [showInflatedStats, setShowInflatedStats] = useState<boolean>(true);
+  const [showInflatedStats, setShowInflatedStats] = useState<boolean>(false);
   useEffect(() => {
     const VISIT_KEY = "last_visit_timestamp";
     const FIVE_MINUTES = 5 * 60 * 1000;
