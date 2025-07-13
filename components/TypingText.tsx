@@ -13,7 +13,7 @@ export const TypingText = ({
   const [displayedText, setDisplayedText] = useState("");
   const [completed, setCompleted] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  // const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const indexRef = useRef(0);
 
   useEffect(() => {
@@ -22,13 +22,13 @@ export const TypingText = ({
 
     if (disabled) {
       if (intervalRef.current) clearInterval(intervalRef.current);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      // if (timeoutRef.current) clearTimeout(timeoutRef.current);
       return;
     }
 
     indexRef.current = 0;
 
-    timeoutRef.current = setTimeout(() => {
+    // timeoutRef.current = setTimeout(() => {
       intervalRef.current = setInterval(() => {
         const nextChar = text.charAt(indexRef.current);
         setDisplayedText((prev) => prev + nextChar);
@@ -39,11 +39,11 @@ export const TypingText = ({
           setCompleted(true);
         }
       }, speed);
-    }, 2000);
+    // }, 2000);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      // if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [text, disabled]);
 
