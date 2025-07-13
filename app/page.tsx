@@ -79,7 +79,7 @@ export default function HomePage() {
         />
       </Head> */}
 
-        <Glitch delay={0.8}>
+        <Glitch delay={0.8} style={{ position: "relative", zIndex: 200 }} className="glitch">
           <Image
             src={johnnyPic}
             alt="Johnny Keeys picture"
