@@ -70,6 +70,15 @@ export default function HomePage() {
         {(
           stats.uniqueVisitors + Number(showInflatedStats && 338)
         ).toLocaleString()}
+        <br/>
+        <br/>
+        <hr/>
+        <br/>
+        height: 6'2"<br/>
+        weight: 175lb<br/>
+        <br/>
+        <br/>
+        click here to send a message to Johnny Keeys
       </motion.h1>
       <main className={styles.main}>
         {/* <Head>
@@ -87,17 +96,17 @@ export default function HomePage() {
             height={300}
           />
         </Glitch>
-        <Glitch delay={1.3} className="glitch">
+        <Glitch delay={1.8} className="glitch">
           Johnny Keeys
         </Glitch>
-        <Glitch delay={2} className="subheader">
+        <Glitch delay={3} className="subheader">
           <TypingText text="Actor · Musician" disabled={!shouldAnimate} />
         </Glitch>
 
         <br />
 
         <Glitch
-          delay={4}
+          delay={6}
           className={styles.description}
           style={{
             fontStyle: "italic",
@@ -114,7 +123,7 @@ export default function HomePage() {
         <br />
 
         <Glitch
-          delay={6}
+          delay={9}
           className={styles.description}
           // className="subheader"
         >
@@ -126,7 +135,7 @@ export default function HomePage() {
         </Glitch>
         <br />
         <Glitch
-          delay={8}
+          delay={12}
           className={styles.description}
           // className="subheader"
         >
