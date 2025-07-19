@@ -8,6 +8,7 @@ import { TypingText } from "@/components/TypingText";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Glitch } from "@/components/Glitch";
+import Guestbook from "./components/Guestbook";
 // import { TypingText } from "@/components/TypingText";
 
 export default function HomePage() {
@@ -47,7 +48,7 @@ export default function HomePage() {
   }, []);
   return (
     <>
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: shouldAnimate && 5 }}
@@ -70,16 +71,17 @@ export default function HomePage() {
         {(
           stats.uniqueVisitors + Number(showInflatedStats && 338)
         ).toLocaleString()}
-        <br/>
-        <br/>
-        <hr/>
-        <br/>
-        height: 6'2"<br/>
-        weight: 175lb<br/>
-        <br/>
-        <br/>
-        click here to send a message to Johnny Keeys
-      </motion.h1>
+        <br />
+        <br />
+        <hr />
+        <br />
+        height: 6'2"
+        <br />
+        weight: 175lb
+        <br />
+        <br />
+        <br />
+      </motion.div>
       <main className={styles.main}>
         {/* <Head>
         <link
@@ -88,7 +90,11 @@ export default function HomePage() {
         />
       </Head> */}
 
-        <Glitch delay={0.8} style={{ position: "relative", zIndex: 200 }} className="glitch">
+        <Glitch
+          delay={0.8}
+          style={{ position: "relative", zIndex: 200 }}
+          className="glitch"
+        >
           <Image
             src={johnnyPic}
             alt="Johnny Keeys picture"
@@ -106,7 +112,7 @@ export default function HomePage() {
         <br />
 
         <Glitch
-          delay={6}
+          delay={4}
           className={styles.description}
           style={{
             fontStyle: "italic",
@@ -123,7 +129,7 @@ export default function HomePage() {
         <br />
 
         <Glitch
-          delay={9}
+          delay={6}
           className={styles.description}
           // className="subheader"
         >
@@ -135,7 +141,7 @@ export default function HomePage() {
         </Glitch>
         <br />
         <Glitch
-          delay={12}
+          delay={8}
           className={styles.description}
           // className="subheader"
         >
@@ -145,6 +151,8 @@ export default function HomePage() {
           vulnerable—demonstrating my ability to embody complex character arcs
           and deliver magnetic screen presence.
         </Glitch>
+
+        <Guestbook/>
       </main>
     </>
   );

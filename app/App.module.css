@@ -10,3 +10,11 @@ main.main {
   letter-spacing: 1px;
   margin: 1rem;
 }
+
+button.signGuestbook {
+  z-index: 1000;
+  position: relative;
+}
+
+
+
