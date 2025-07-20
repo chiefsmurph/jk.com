@@ -4,7 +4,6 @@
   top: 180px;
   right: 30px;
   width: 300px;
-  max-height: 80vh;
   overflow-y: auto;
 }
 @media (max-width: 1420px) {
@@ -15,12 +14,11 @@
   }
 }
 
-
 /* button */
 .signGuestbookButton {
   background: black;
   color: #fefefe;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   border: 2px solid #ffc400;
   border-radius: 8px;
   padding: 10px 20px;
@@ -38,13 +36,7 @@
   box-shadow: 0 0 20px #ffc400;
 }
 
-
-
-
 /* div to display guestbook entries */
-
-
-
 
 .entries {
   margin-top: 40px;
@@ -52,6 +44,20 @@
   font-family: inherit;
   text-align: left;
 }
+.entries > h3 {
+  border-bottom: 2px solid white;
+}
+.entries ul {
+  max-height: calc(100vh - 320px);
+  overflow-y: scroll;
+}
+.entries ul::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+
+
 
 .entry {
   border-top: 1px solid #666;
@@ -63,10 +69,7 @@
   opacity: 0.6;
 }
 
-
 /* sign guestbook modal */
-
-
 
 .guestbookModal {
   display: flex;
