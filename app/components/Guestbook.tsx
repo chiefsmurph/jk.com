@@ -30,7 +30,10 @@ export default function Guestbook() {
             <p>No entries yet.</p>
           ) : (
             <ul>
-              {[...entries, ...entries, ...entries, ...entries].map((entry, i) => (
+              {(3 > 5
+                ? [...entries, ...entries, ...entries, ...entries]
+                : entries
+              ).map((entry, i) => (
                 <li key={i} className={styles.entry}>
                   <p>
                     <strong>{entry.name}</strong> wrote:
