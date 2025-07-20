@@ -134,10 +134,10 @@ export default function HomePage() {
           // className="subheader"
         >
           Dynamic, screen-tested performer with leading-role experience in TV
-          and film, including national exposure on CBS. Trained at Berklee, I’ve
-          streamed to thousands, performed live, and deliver a raw presence and
-          unmistakable energy to every role. Based in L.A. and willing to
-          relocate for the right project.
+          and film, including national exposure on CBS. Trained at Berklee
+          College of Music, I’ve streamed to thousands, performed live, and
+          deliver a raw presence and unmistakable energy to every role. Based in
+          L.A. and willing to relocate for the right project.
         </Glitch>
         <br />
         <Glitch
@@ -152,7 +152,7 @@ export default function HomePage() {
           and deliver magnetic screen presence.
         </Glitch>
 
-        <Guestbook/>
+        <Guestbook />
       </main>
     </>
   );
