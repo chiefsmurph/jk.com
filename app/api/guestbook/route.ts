@@ -11,7 +11,7 @@ export async function GET() {
       ? JSON.parse(fs.readFileSync(filePath, "utf8"))
       : [];
     const allApproved = data.filter((entry) => entry.isApproved);
-    return NextResponse.json(data);
+    return NextResponse.json(data.map(({ ip, ...entry }) => entry));
   } catch (err) {
     console.error(err);
     return NextResponse.json(
