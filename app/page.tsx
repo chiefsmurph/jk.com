@@ -2,19 +2,19 @@
 import { motion } from "framer-motion";
 // import Link from "next/link";
 
-import styles from "./App.module.css";
 import "./styles.css";
 import { TypingText } from "@/components/TypingText";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Glitch } from "@/components/Glitch";
 import Guestbook from "./components/Guestbook";
+import styles from "./App.module.css";
 // import { TypingText } from "@/components/TypingText";
 
 export default function HomePage() {
   const shouldAnimate = true;
   const [stats, setStats] = useState<any>({});
-  const [showInflatedStats, setShowInflatedStats] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   useEffect(() => {
     const VISIT_KEY = "last_visit_timestamp";
     const FIVE_MINUTES = 5 * 60 * 1000;
@@ -48,40 +48,20 @@ export default function HomePage() {
   }, []);
   return (
     <>
-      {/* <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: shouldAnimate && 5 }}
-        className="stats"
-      >
-        <u>
-          sta
-          <span onDoubleClick={() => setShowInflatedStats((cur) => !cur)}>
-            t
-          </span>
-          s
-        </u>
-        <br />
-        total visits:{" "}
-        {(
-          stats.totalVisits + Number(showInflatedStats && 392)
-        ).toLocaleString()}
-        <br />
-        unique visitors:{" "}
-        {(
-          stats.uniqueVisitors + Number(showInflatedStats && 338)
-        ).toLocaleString()}
-        <br />
-        <br />
-        <hr />
-        <br />
-        height: 6'2"
-        <br />
-        weight: 175lb
-        <br />
-        <br />
-        <br />
-      </motion.div> */}
+      {isAdmin && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="stats"
+        >
+          <u>stats</u>
+          <br />
+          total visits: {stats.totalVisits.toLocaleString()}
+          <br />
+          unique visitors: {stats.uniqueVisitors.toLocaleString()}
+        </motion.div>
+      )}
       <main className={styles.main}>
         {/* <Head>
         <link
@@ -122,8 +102,9 @@ export default function HomePage() {
           }}
           // className="subheader"
         >
-          Hollywood is thirsting for a new type of movie star… and Timothée
-          Chalamet isn’t cutting it.
+          <span onDoubleClick={() => setIsAdmin((cur) => !cur)}>Hollywood</span>{" "}
+          is thirsting for a new type of movie star… and Timothée Chalamet isn’t
+          cutting it.
         </Glitch>
 
         <br />
@@ -152,7 +133,18 @@ export default function HomePage() {
           and deliver magnetic screen presence.
         </Glitch>
 
-        <Guestbook />
+        <Glitch delay={10} className={styles["video-wrapper"]}>
+          <h1>Johnny's Actor Reel (7/25)</h1>
+          <video controls width="100%">
+            <source
+              src="/videos/johnny-keeys-reel-07-25-compressed.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </Glitch>
+
+        <Guestbook isAdmin={isAdmin} />
       </main>
     </>
   );

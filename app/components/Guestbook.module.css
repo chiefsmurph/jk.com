@@ -64,6 +64,10 @@
   padding: 12px 0;
 }
 
+.entry.isNotApproved {
+  opacity: 0.6;
+}
+
 .timestamp {
   font-size: 0.8rem;
   opacity: 0.6;

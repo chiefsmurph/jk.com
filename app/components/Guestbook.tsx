@@ -4,10 +4,16 @@ import styles from "./Guestbook.module.css";
 import { Glitch } from "@/components/Glitch";
 import clsx from "clsx";
 
-export default function Guestbook() {
+export default function Guestbook({ isAdmin }: { isAdmin: boolean }) {
   const [showModal, setShowModal] = useState(false);
   const [entries, setEntries] = useState<
-    { name: string; favorite: string; inspiration: string; timestamp: string }[]
+    {
+      name: string;
+      favorite: string;
+      inspiration: string;
+      timestamp: string;
+      isApproved: boolean;
+    }[]
   >([]);
 
   useEffect(() => {
@@ -33,18 +39,25 @@ export default function Guestbook() {
               {(3 > 5
                 ? [...entries, ...entries, ...entries, ...entries]
                 : entries
-              ).map((entry, i) => (
-                <li key={i} className={styles.entry}>
-                  <p>
-                    <strong>{entry.name}</strong> wrote:
-                  </p>
-                  <p>💛 {entry.favorite}</p>
-                  <p>🌟 Inspired by: {entry.inspiration}</p>
-                  <p className={styles.timestamp}>
-                    {new Date(entry.timestamp).toLocaleString()}
-                  </p>
-                </li>
-              ))}
+              )
+                .filter((entry) => isAdmin || entry.isApproved)
+                .map((entry, i) => (
+                  <li
+                    key={i}
+                    className={clsx(styles.entry, {
+                      [styles.isNotApproved]: !entry.isApproved,
+                    })}
+                  >
+                    <p>
+                      <strong>{entry.name}</strong> wrote:
+                    </p>
+                    <p>💛 {entry.favorite}</p>
+                    <p>🌟 Inspired by: {entry.inspiration}</p>
+                    <p className={styles.timestamp}>
+                      {new Date(entry.timestamp).toLocaleString()}
+                    </p>
+                  </li>
+                ))}
             </ul>
           )}
         </div>
