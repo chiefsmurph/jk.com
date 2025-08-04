@@ -92,7 +92,7 @@ export default function HomePage() {
         <br />
 
         <Glitch
-          delay={4}
+          delay={4.5}
           className={styles.description}
           style={{
             fontStyle: "italic",
@@ -133,6 +133,13 @@ export default function HomePage() {
           and deliver magnetic screen presence.
         </Glitch>
 
+        <Glitch delay={10} className={styles.description}>
+          <b>One of my strongest assets? I elevate the room.</b>
+          <br />
+          <br /> I’ve got sharp taste, know when to lead, and don’t need to be
+          the loudest or the lead to raise the level of everyone around me.
+          Directors feel it. Castmates feel it. The audience sees it.
+        </Glitch>
         {/* <Glitch delay={10} className={styles["video-wrapper"]}>
           <h1>Johnny's Actor Reel (7/25)</h1>
           <video controls width="100%">
