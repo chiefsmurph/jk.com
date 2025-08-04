@@ -133,7 +133,7 @@ export default function HomePage() {
           and deliver magnetic screen presence.
         </Glitch>
 
-        <Glitch delay={10} className={styles["video-wrapper"]}>
+        {/* <Glitch delay={10} className={styles["video-wrapper"]}>
           <h1>Johnny's Actor Reel (7/25)</h1>
           <video controls width="100%">
             <source
@@ -142,7 +142,7 @@ export default function HomePage() {
             />
             Your browser does not support the video tag.
           </video>
-        </Glitch>
+        </Glitch> */}
 
         <Guestbook isAdmin={isAdmin} />
       </main>
