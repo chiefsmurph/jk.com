@@ -132,6 +132,7 @@ export default function HomePage() {
           vulnerable—demonstrating my ability to embody complex character arcs
           and deliver magnetic screen presence.
         </Glitch>
+        <br />
 
         <Glitch delay={10} className={styles.description}>
           <b>One of my strongest assets? I elevate the room.</b>
