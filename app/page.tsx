@@ -58,9 +58,7 @@ export default function HomePage() {
           className="stats"
         >
           <u>stats</u>
-          <br />
           total visits: {stats.totalVisits.toLocaleString()}
-          <br />
           unique visitors: {stats.uniqueVisitors.toLocaleString()}
         </motion.div>
       )}
@@ -84,17 +82,18 @@ export default function HomePage() {
             height={300}
           />
         </Glitch> */}
-        <Glitch delay={1.8} className="glitch">
+        <Glitch delay={0.2} className="glitch">
           Johnny Keeys
         </Glitch>
-        <Glitch delay={3} className="subheader">
-          <TypingText text="Film Actor" disabled={!shouldAnimate} />
+        <Glitch delay={1} className="subheader">
+          <TypingText
+            text="Los Angeles-based Film Actor"
+            disabled={!shouldAnimate}
+          />
         </Glitch>
 
-        <br />
-
         <Glitch
-          delay={4.5}
+          delay={3}
           className={styles.description}
           style={{
             fontStyle: "italic",
@@ -111,8 +110,24 @@ export default function HomePage() {
           kind of screen presence — subtle, magnetic, unforgettable.
         </Glitch>
 
-        <br />
+        <Glitch
+          delay={4.5}
+          className={styles.description}
+          style={{
+            fontStyle: "italic",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            color: "gold",
+          }}
+          // className="subheader"
+        >
+          Contact:{" "}
+          <a href="mailto:johnny@johnnykeeys.com" style={{ color: "cyan" }}>
+            johnny@johnnykeeys.com
+          </a>
+        </Glitch>
 
+        <br />
         <Glitch
           delay={6}
           className={styles.description}
@@ -124,7 +139,7 @@ export default function HomePage() {
           trained at Berklee College of Music — where he developed a deep sense
           of rhythm, emotional timing, and storytelling.
         </Glitch>
-        <br />
+
         <Glitch
           delay={8}
           className={styles.description}
@@ -135,15 +150,12 @@ export default function HomePage() {
           consistently respond to the way he listens, reacts, and elevates
           performances in scene partners.
         </Glitch>
-        <br />
 
         <Glitch delay={10} className={styles.description}>
           Recent work includes playing Detective Temski in a New York Film
           Academy project and Chief Deputy Boe Dunn in the period short Bleed
           American: The Battle of Athens.
         </Glitch>
-
-        <br />
 
         <Glitch delay={12} className={styles.description}>
           Now based in Los Angeles, Johnny is focused on narrative film, TV, and
