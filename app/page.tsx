@@ -35,13 +35,15 @@ export default function HomePage() {
   }, []);
 
   const [johnnyPic, setJohnnyPic] = useState(
-    "/images/me cool transparent PXL_20250516_230136376.png"
+    // "/images/me cool transparent PXL_20250516_230136376.png"
+    "/images/8-7 jk suit.png"
   );
 
   useEffect(() => {
     const images = [
-      "/images/me cool transparent PXL_20250516_230136376.png",
-      "/images/chill suit.png",
+      "/images/8-7 jk suit.png",
+      // "/images/me cool transparent PXL_20250516_230136376.png",
+      // "/images/chill suit.png",
     ];
     const randomIndex = Math.round(Math.random() * 1);
     setJohnnyPic(images[randomIndex]);
@@ -70,7 +72,7 @@ export default function HomePage() {
         />
       </Head> */}
 
-        <Glitch
+        {/* <Glitch
           delay={0.8}
           style={{ position: "relative", zIndex: 200 }}
           className="glitch"
@@ -81,12 +83,12 @@ export default function HomePage() {
             width={240}
             height={300}
           />
-        </Glitch>
+        </Glitch> */}
         <Glitch delay={1.8} className="glitch">
           Johnny Keeys
         </Glitch>
         <Glitch delay={3} className="subheader">
-          <TypingText text="Actor · Musician" disabled={!shouldAnimate} />
+          <TypingText text="Film Actor" disabled={!shouldAnimate} />
         </Glitch>
 
         <br />
@@ -102,9 +104,11 @@ export default function HomePage() {
           }}
           // className="subheader"
         >
-          <span onDoubleClick={() => setIsAdmin((cur) => !cur)}>Hollywood</span>{" "}
-          is thirsting for a new type of movie star… and Timothée Chalamet isn’t
-          cutting it.
+          {" "}
+          A <span onDoubleClick={() => setIsAdmin((cur) => !cur)}>
+            new
+          </span>{" "}
+          kind of screen presence — subtle, magnetic, unforgettable.
         </Glitch>
 
         <br />
@@ -114,11 +118,11 @@ export default function HomePage() {
           className={styles.description}
           // className="subheader"
         >
-          Dynamic, screen-tested performer with leading-role experience in TV
-          and film, including national exposure on CBS. Trained at Berklee
-          College of Music, I’ve streamed to thousands, performed live, and
-          deliver a raw presence and unmistakable energy to every role. Based in
-          L.A. and willing to relocate for the right project.
+          Johnny Keeys is an actor whose grounded stillness, sharp presence, and
+          quietly magnetic energy make him immediately compelling on screen. He
+          brings an expressive subtlety shaped by years as a pianist — having
+          trained at Berklee College of Music — where he developed a deep sense
+          of rhythm, emotional timing, and storytelling.
         </Glitch>
         <br />
         <Glitch
@@ -126,20 +130,26 @@ export default function HomePage() {
           className={styles.description}
           // className="subheader"
         >
-          I recently wrapped my first lead role as Boe Dunn in Bleed American:
-          The Battle of Athens, a WWII-era action docudrama from Stonegait
-          Pictures, in which Boe evolves from cocky and corrupt to
-          vulnerable—demonstrating my ability to embody complex character arcs
-          and deliver magnetic screen presence.
+          Originally from the SF Bay Area, Johnny blends an approachable charm
+          with a distinctive look that stands out on camera. Directors
+          consistently respond to the way he listens, reacts, and elevates
+          performances in scene partners.
         </Glitch>
         <br />
 
         <Glitch delay={10} className={styles.description}>
-          <b>One of my strongest assets? I elevate the room.</b>
-          <br />
-          <br /> I’ve got sharp taste, know when to lead, and don’t need to be
-          the loudest or the lead to raise the level of everyone around me.
-          Directors feel it. Castmates feel it. The audience sees it.
+          Recent work includes playing Detective Temski in a New York Film
+          Academy project and Chief Deputy Boe Dunn in the period short Bleed
+          American: The Battle of Athens.
+        </Glitch>
+
+        <br />
+
+        <Glitch delay={12} className={styles.description}>
+          Now based in Los Angeles, Johnny is focused on narrative film, TV, and
+          character-driven shorts. He’s committed to collaborating with
+          filmmakers who value subtle, expressive performances and actors who
+          can shape the energy in a room without forcing it.
         </Glitch>
         {/* <Glitch delay={10} className={styles["video-wrapper"]}>
           <h1>Johnny's Actor Reel (7/25)</h1>
@@ -152,7 +162,7 @@ export default function HomePage() {
           </video>
         </Glitch> */}
 
-        <Guestbook isAdmin={isAdmin} />
+        {/* <Guestbook isAdmin={isAdmin} /> */}
       </main>
     </>
   );
