@@ -152,9 +152,10 @@ export default function HomePage() {
         </Glitch>
 
         <Glitch delay={10} className={styles.description}>
-          Recent work includes playing Detective Temski in a New York Film
-          Academy project and Chief Deputy Boe Dunn in the period short Bleed
-          American: The Battle of Athens.
+          Recent work includes playing Detective Tempski in a New York Film
+          Academy project (Nov 2025 | Burbank, CA) and Chief Deputy Boe Dunn in
+          the period short Bleed American: The Battle of Athens (June 2025 |
+          Boonville, MO).
         </Glitch>
 
         <Glitch delay={12} className={styles.description}>
