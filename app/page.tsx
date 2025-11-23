@@ -34,20 +34,6 @@ export default function HomePage() {
     }
   }, []);
 
-  const [johnnyPic, setJohnnyPic] = useState(
-    // "/images/me cool transparent PXL_20250516_230136376.png"
-    "/images/8-7 jk suit.png"
-  );
-
-  useEffect(() => {
-    const images = [
-      "/images/8-7 jk suit.png",
-      // "/images/me cool transparent PXL_20250516_230136376.png",
-      // "/images/chill suit.png",
-    ];
-    const randomIndex = Math.round(Math.random() * 1);
-    setJohnnyPic(images[randomIndex]);
-  }, []);
   return (
     <>
       {isAdmin && (
@@ -70,19 +56,19 @@ export default function HomePage() {
         />
       </Head> */}
 
-        {/* <Glitch
+        <Glitch
           delay={0.8}
-          style={{ position: "relative", zIndex: 200 }}
+          style={{ position: "relative", zIndex: 0 }}
           className="glitch"
         >
           <Image
-            src={johnnyPic}
+            src={"/images/may 31 headshot.jpg"}
             alt="Johnny Keeys picture"
-            width={240}
-            height={300}
+            width={200}
+            height={200}
           />
-        </Glitch> */}
-        <Glitch delay={0.2} className="glitch">
+        </Glitch>
+        <Glitch delay={1} className="glitch">
           Johnny Keeys
         </Glitch>
         <Glitch delay={1} className="subheader">
@@ -96,6 +82,7 @@ export default function HomePage() {
           delay={3}
           className={styles.description}
           style={{
+            fontSize: "0.9rem",
             fontStyle: "italic",
             fontWeight: "bold",
             textTransform: "uppercase",
@@ -114,6 +101,7 @@ export default function HomePage() {
           delay={4.5}
           className={styles.description}
           style={{
+            fontSize: "0.9rem",
             fontStyle: "italic",
             fontWeight: "bold",
             textTransform: "uppercase",
@@ -127,7 +115,6 @@ export default function HomePage() {
           </a>
         </Glitch>
 
-        <br />
         <Glitch
           delay={6}
           className={styles.description}
