@@ -62,7 +62,7 @@ export default function HomePage() {
           className="glitch"
         >
           <Image
-            src={"/images/may 31 headshot.jpg"}
+            src={"/images/may 31 headshot transbg.png"}
             alt="Johnny Keeys picture"
             width={200}
             height={200}
