@@ -3,7 +3,7 @@ import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
 export const metadata = {
-  title: "Johnny Keeys - actor, musician",
+  title: "Johnny Keeys - Los Angeles-based Film Actor",
   description: "Dynamic, screen-tested performer with leading-role experience in TV and film.",
   icons: {
     icon: "/favicon/favicon.ico",
