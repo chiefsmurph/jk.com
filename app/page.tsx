@@ -61,12 +61,34 @@ export default function HomePage() {
           style={{ position: "relative", zIndex: 0 }}
           className="glitch"
         >
-          <Image
-            src={"/images/johnnyanimated.webp"}
-            alt="Johnny Keeys picture"
-            width={400}
-            height={534}
-          />
+          <div className={styles.johnnyStage}>
+            <Image
+              src={"/images/johnnyanimated.webp"}
+              alt="Johnny Keeys picture"
+              width={400}
+              height={534}
+            />
+            <Image
+              src={"/images/johnnyanimated1-ezgif.com-speed.webp"}
+              alt="Johnny Keeys picture"
+              width={400}
+              height={534}
+            />
+            
+            <Image
+              src={"/images/johnnyanimated.webp"}
+              alt="Johnny Keeys picture"
+              width={400}
+              height={534}
+            />
+            <Image
+              src={"/images/johnnyanimated1-ezgif.com-speed.webp"}
+              alt="Johnny Keeys picture"
+              width={400}
+              height={534}
+            />
+            
+          </div>
         </Glitch>
         <Glitch delay={1} className="glitch">
           Johnny Keeys
