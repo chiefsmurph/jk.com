@@ -62,10 +62,10 @@ export default function HomePage() {
           className="glitch"
         >
           <Image
-            src={"/images/may 31 headshot transbg.png"}
+            src={"/images/johnnyanimated.webp"}
             alt="Johnny Keeys picture"
-            width={200}
-            height={200}
+            width={400}
+            height={534}
           />
         </Glitch>
         <Glitch delay={1} className="glitch">
