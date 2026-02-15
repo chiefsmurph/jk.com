@@ -56,7 +56,7 @@ export default function HomePage() {
         />
       </Head> */}
 
-        <Glitch
+        {/* <Glitch
           delay={0.8}
           style={{ position: "relative", zIndex: 0 }}
           className="glitch"
@@ -89,7 +89,7 @@ export default function HomePage() {
             />
             
           </div>
-        </Glitch>
+        </Glitch> */}
         <Glitch delay={1} className="glitch">
           Johnny Keeys
         </Glitch>
@@ -142,11 +142,11 @@ export default function HomePage() {
           className={styles.description}
           // className="subheader"
         >
-          Johnny Keeys is an actor whose grounded stillness, sharp presence, and
-          quietly magnetic energy make him immediately compelling on screen. He
-          brings an expressive subtlety shaped by years as a pianist — having
-          trained at Berklee College of Music — where he developed a deep sense
-          of rhythm, emotional timing, and storytelling.
+          Johnny Keeys is a Los Angeles–based actor recognized for grounded
+          stillness, sharp presence, and understated charm that moves naturally
+          between drama and comedy. A Berklee-trained musician turned actor, he
+          brings refined timing, emotional precision, and quiet magnetism to
+          character-driven storytelling.
         </Glitch>
 
         <Glitch
@@ -154,12 +154,11 @@ export default function HomePage() {
           className={styles.description}
           // className="subheader"
         >
-          Originally from the SF Bay Area, Johnny blends an approachable charm
-          with a distinctive look that stands out on camera. Directors
-          consistently respond to the way he listens, reacts, and elevates
-          performances in scene partners.
+          Recent work includes Alex in <i>The Magic Box</i>, Detective Tempski
+          in <i>Gas</i>, Chief Deputy Boe Dunn in <i>Bleed American</i>, and the
+          affable Stoney in the upcoming feature <i>Killer Revenge</i>.
         </Glitch>
-
+        {/* 
         <Glitch delay={10} className={styles.description}>
           Recent work includes playing Detective Tempski in a New York Film
           Academy project (Nov 2025 | Burbank, CA) and Chief Deputy Boe Dunn in
@@ -172,17 +171,18 @@ export default function HomePage() {
           character-driven shorts. He’s committed to collaborating with
           filmmakers who value subtle, expressive performances and actors who
           can shape the energy in a room without forcing it.
-        </Glitch>
-        {/* <Glitch delay={10} className={styles["video-wrapper"]}>
-          <h1>Johnny's Actor Reel (7/25)</h1>
+        </Glitch> */}
+
+        <Glitch delay={10} className={styles["video-wrapper"]}>
+          <h1>Johnny's Actor Reel (2026)</h1>
           <video controls width="100%">
             <source
-              src="/videos/johnny-keeys-reel-07-25-compressed.mp4"
+              src="/videos/johnny_keeys_reel_feb_2026_web.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
           </video>
-        </Glitch> */}
+        </Glitch>
 
         {/* <Guestbook isAdmin={isAdmin} /> */}
       </main>
