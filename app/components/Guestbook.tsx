@@ -28,7 +28,7 @@ export default function Guestbook({ isAdmin }: { isAdmin: boolean }) {
           onClick={() => setShowModal(true)}
           className={styles.signGuestbookButton}
         >
-          Sign the Johnny Keeys Guestbook
+          Sign the Johnny Blake Guestbook
         </button>
         <div className={styles.entries}>
           <h3>Guestbook Entries 💬</h3>
@@ -65,7 +65,7 @@ export default function Guestbook({ isAdmin }: { isAdmin: boolean }) {
       <Modal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
-        title="Sign the Johnny Keeys Guestbook"
+        title="Sign the Johnny Blake Guestbook"
       >
         <form
           className={styles.guestbookModal}
@@ -106,7 +106,7 @@ export default function Guestbook({ isAdmin }: { isAdmin: boolean }) {
           </label>
 
           <label>
-            My favorite thing about Johnny Keeys is ...
+            My favorite thing about Johnny Blake is ...
             <input type="text" name="favorite" />
           </label>
 

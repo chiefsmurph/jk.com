@@ -64,26 +64,26 @@ export default function HomePage() {
           <div className={styles.johnnyStage}>
             <Image
               src={"/images/johnnyanimated.webp"}
-              alt="Johnny Keeys picture"
+              alt="Johnny Blake picture"
               width={400}
               height={534}
             />
             <Image
               src={"/images/johnnyanimated1-ezgif.com-speed.webp"}
-              alt="Johnny Keeys picture"
+              alt="Johnny Blake picture"
               width={400}
               height={534}
             />
             
             <Image
               src={"/images/johnnyanimated.webp"}
-              alt="Johnny Keeys picture"
+              alt="Johnny Blake picture"
               width={400}
               height={534}
             />
             <Image
               src={"/images/johnnyanimated1-ezgif.com-speed.webp"}
-              alt="Johnny Keeys picture"
+              alt="Johnny Blake picture"
               width={400}
               height={534}
             />
@@ -91,7 +91,7 @@ export default function HomePage() {
           </div>
         </Glitch> */}
         <Glitch delay={1} className="glitch">
-          Johnny Keeys
+          Johnny Blake
         </Glitch>
         <Glitch delay={1} className="subheader">
           <TypingText
@@ -132,46 +132,30 @@ export default function HomePage() {
           // className="subheader"
         >
           Contact:{" "}
-          <a href="mailto:johnny@johnnykeeys.com" style={{ color: "cyan" }}>
-            johnny@johnnykeeys.com
+          <a href="mailto:johnny@johnnyblakeactor.com" style={{ color: "cyan" }}>
+            johnny@johnnyblakeactor.com
           </a>
         </Glitch>
+        {`
 
-        <Glitch
-          delay={6}
-          className={styles.description}
-          // className="subheader"
-        >
-          Johnny Keeys is a Los Angeles–based actor recognized for grounded
-          stillness, sharp presence, and understated charm that moves naturally
-          between drama and comedy. A Berklee-trained musician turned actor, he
-          brings refined timing, emotional precision, and quiet magnetism to
-          character-driven storytelling.
-        </Glitch>
+        Johnny Blake is a Los Angeles-based actor defined by a grounded stillness and a presence that suggests an innate awareness of the layers beneath the surface. Known for a "thousand-yard" gaze and an unshakeable cinematic weight, Johnny brings a rare, lived-in clarity to his work—the look of a man who has processed the signal within the noise and emerged with a centered, magnetic restraint.
 
-        <Glitch
-          delay={8}
-          className={styles.description}
-          // className="subheader"
-        >
-          Recent work includes Alex in <i>The Magic Box</i>, Detective Tempski
-          in <i>Gas</i>, Chief Deputy Boe Dunn in <i>Bleed American</i>, and the
-          affable Stoney in the upcoming feature <i>Killer Revenge</i>.
-        </Glitch>
-        {/* 
-        <Glitch delay={10} className={styles.description}>
-          Recent work includes playing Detective Tempski in a New York Film
-          Academy project (Nov 2025 | Burbank, CA) and Chief Deputy Boe Dunn in
-          the period short Bleed American: The Battle of Athens (June 2025 |
-          Boonville, MO).
-        </Glitch>
+A Berklee-trained musician, Johnny translates the rhythmic textures of avant-garde sound into his acting, bringing an atmospheric "reverb" to the screen. His style is a nod to the grit of Old Hollywood—a return to the era of the quiet, capable American lead who doesn't need to shout to be heard. It is a presence rooted in "American Steel": principled, resilient, and focused, yet possessed of a "psychedelic" depth that feels both grounded and ethereal.
 
-        <Glitch delay={12} className={styles.description}>
-          Now based in Los Angeles, Johnny is focused on narrative film, TV, and
-          character-driven shorts. He’s committed to collaborating with
-          filmmakers who value subtle, expressive performances and actors who
-          can shape the energy in a room without forcing it.
-        </Glitch> */}
+Johnny moves effortlessly between the gritty and the cerebral, specializing in characters who carry a "secret" and an unbothered confidence. Whether in the midst of a high-stakes drama or a sharp-witted comedy, his performance is anchored by a "knowing" smirk that suggests he is always one step ahead of the room.
+
+Recent work includes his lead performance as Chief Deputy Boe Dunn in the gritty drama Bleed American, his role as Alex in the cerebral project The Magic Box, and Detective Tempski in Gas. He can next be seen in a featured role as the layered, affable Stoney in the upcoming feature film Killer Revenge.
+`
+          .split("\n")
+          .map((paragraph, index) => (
+            <Glitch
+              delay={3 + index * 0.3}
+              className={styles.description}
+              // className="subheader"
+            >
+              {paragraph}
+            </Glitch>
+          ))}
 
         <Glitch delay={10} className={styles["video-wrapper"]}>
           <h1>Johnny's Actor Reel (2026)</h1>

@@ -10,6 +10,9 @@ main.main {
   letter-spacing: 1px;
   margin: 0.2rem 1rem 1rem;
   text-align: left;
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 button.signGuestbook {
@@ -60,7 +63,6 @@ button.signGuestbook {
   opacity: 0.3;
 }
 
-
 /* Offset the second GIF by time */
 .johnnyStage > img:nth-child(3) {
   animation-delay: 2s; /* offset */
@@ -68,7 +70,6 @@ button.signGuestbook {
   animation: fadeCycle 20s linear infinite;
   opacity: 0.8;
 }
-
 
 /* Offset the second GIF by time */
 .johnnyStage > img:nth-child(4) {
