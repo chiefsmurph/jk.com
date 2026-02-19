@@ -13,6 +13,7 @@ main.main {
   font-family: "Crimson Text", serif;
   font-weight: 700;
   font-style: normal;
+  color: rgba(255, 255, 255, 0.7)
 }
 
 button.signGuestbook {
