@@ -1,65 +1,49 @@
-@keyframes boldGlow {
-  0%, 100% {
+@keyframes cinematicBreath {
+  0%,
+  100% {
+    /* Soft, expensive-looking white glow */
     text-shadow:
-      0 0 8px #ff8c00,
-      0 0 16px #ff8c00,
-      0 0 32px #ff8c00,
-      0 0 48px #ff8c00,
-      0 0 64px #ff8c00;
+      0 0 5px rgba(255, 255, 255, 0.4),
+      0 0 10px rgba(255, 255, 255, 0.2);
+    opacity: 0.95;
   }
   50% {
+    /* Slight warm gold tint — the "American Steel" wink */
     text-shadow:
-      0 0 12px yellow,
-      0 0 16px yellow,
-      0 0 32px yellow,
-      0 0 28px yellow,
-      0 0 12px yellow;
+      0 0 8px rgba(255, 248, 220, 0.6),
+      0 0 15px rgba(255, 248, 220, 0.3);
+    opacity: 1;
   }
 }
 
-@keyframes boldGlowWhite {
-  0%, 100% {
-    text-shadow:
-      0 0 8px #fff,
-      0 0 16px #fff,
-      0 0 32px #fff,
-      0 0 48px #fff,
-      0 0 64px #fff;
-  }
-  50% {
-    text-shadow:
-      0 0 12px yellow,
-      0 0 16px yellow,
-      0 0 32px yellow,
-      0 0 28px yellow,
-      0 0 12px yellow;
-  }
-}
-
+/* Keep your sizeGlow but make it subtler for a more "centered" feel */
 @keyframes sizeGlow {
-  0%, 100% {
-      transform: scale(1.02) 
+  0%,
+  100% {
+    transform: scale(1.01);
   }
   50% {
-      transform: scale(1) 
+    transform: scale(1);
   }
 }
 
 .glitch {
-  font-family: "Orbitron", sans-serif;
+  /* Consider switching Orbitron to a bold Sans-Serif like "Inter" or "Montserrat" 
+     to better contrast with your Crimson Text bio */
+  font-family: "Inter", sans-serif;
   font-size: 4.5rem;
   font-weight: 900;
   color: #fff;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   user-select: none;
   position: relative;
   z-index: 100;
-  /* animate the glow */
-  animation: 
-    boldGlow 5.5s ease-in-out infinite alternate,
-    sizeGlow 10.5s ease-in-out infinite alternate;
-}
 
+  animation:
+    cinematicBreath 6s ease-in-out infinite alternate,
+    sizeGlow 12s ease-in-out infinite alternate;
+}
 
 .glitch img {
   filter: drop-shadow(0 0 16px rgba(255, 185, 0, 0.6));

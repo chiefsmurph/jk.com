@@ -91,7 +91,7 @@ export default function HomePage() {
             
           </div>
         </Glitch> */}
-        <Glitch delay={0.4} className="glitch">
+        <Glitch delay={0.4} className="glitch" style={{ letterSpacing: "2px" }}>
           Johnny Blake
         </Glitch>
         <Glitch delay={0.5} className="subheader">
@@ -101,7 +101,7 @@ export default function HomePage() {
           />
         </Glitch>
 
-        <Glitch
+        {/* <Glitch
           delay={1}
           className={styles.description}
           style={{
@@ -118,7 +118,7 @@ export default function HomePage() {
             new
           </span>{" "}
           kind of screen presence — subtle, magnetic, unforgettable.
-        </Glitch>
+        </Glitch> */}
         <Glitch
           delay={0.8}
           className={styles.description}
@@ -156,15 +156,11 @@ export default function HomePage() {
         </Glitch>
 
         {`
+Johnny Blake is a Los Angeles-based actor defined by a grounded stillness and a presence that suggests an innate awareness of the layers beneath the surface. A Berklee-trained musician, he brings rhythm and restraint to performances rooted in classic high-stakes screen acting. Johnny carries a rare, lived-in clarity—a centered energy that moves effortlessly between the gritty and the cerebral.
 
-        Johnny Blake is a Los Angeles-based actor defined by a grounded stillness and a presence that suggests an innate awareness of the layers beneath the surface. Known for a "thousand-yard" gaze and an unshakeable cinematic weight, Johnny brings a rare, lived-in clarity to his work—the look of a man who has processed the signal within the noise and emerged with a centered, magnetic restraint.
-
-A Berklee-trained musician, Johnny translates the rhythmic textures of avant-garde sound into his acting, bringing an atmospheric "reverb" to the screen. His style is a nod to the grit of Old Hollywood—a return to the era of the quiet, capable American lead who doesn't need to shout to be heard. It is a presence rooted in "American Steel": principled, resilient, and focused, yet possessed of a "psychedelic" depth that feels both grounded and ethereal.
-
-Johnny moves effortlessly between the gritty and the cerebral, specializing in characters who carry a "secret" and an unbothered confidence. Whether in the midst of a high-stakes drama or a sharp-witted comedy, his performance is anchored by a "knowing" smirk that suggests he is always one step ahead of the room.
-
-Recent work includes his lead performance as Chief Deputy Boe Dunn in the gritty drama Bleed American, his role as Alex in the cerebral project The Magic Box, and Detective Tempski in Gas. He can next be seen in a featured role as the layered, affable Stoney in the upcoming feature film Killer Revenge.
+Recent work includes lead performances as Chief Deputy Boe Dunn in the drama Bleed American and Alex in the cerebral project The Magic Box, along with a role as Detective Tempski in Gas. He will next appear as the layered, affable Stoney in the upcoming feature film Killer Revenge.
 `
+          .trim()
           .split("\n")
           .map((paragraph, index) => (
             <Glitch
