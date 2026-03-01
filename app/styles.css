@@ -28,18 +28,17 @@
 }
 
 .glitch {
-  /* Consider switching Orbitron to a bold Sans-Serif like "Inter" or "Montserrat" 
-     to better contrast with your Crimson Text bio */
   font-family: "Inter", sans-serif;
   font-size: 4.5rem;
   font-weight: 900;
   color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
-  user-select: none;
-  position: relative;
-  z-index: 100;
+  /* Remove the 'animation:' line from here */
+}
 
+/* This class only gets added once the Framer Motion fade-in is 100% done */
+.animate-breath {
   animation:
     cinematicBreath 6s ease-in-out infinite alternate,
     sizeGlow 12s ease-in-out infinite alternate;
@@ -47,5 +46,5 @@
 
 .glitch img {
   filter: drop-shadow(0 0 16px rgba(255, 185, 0, 0.6));
-  margin-left: -38px;
+  /* margin-left: -38px; */
 }

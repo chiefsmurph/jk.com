@@ -41,7 +41,7 @@ export default function SocialIcons() {
         flexWrap: "wrap", // key: allows wrap instead of overflow
         padding: "0 16px", // keeps left item reachable
         maxWidth: "100%",
-        overflow: "hidden", // prevents the horizontal scroll trap
+        // overflow: "hidden", // prevents the horizontal scroll trap
       }}
     >
       {socialLinks.map((item, index) => (
@@ -74,16 +74,17 @@ export default function SocialIcons() {
             {item.iconUrl && (
               <img
                 src={item.iconUrl}
-                alt={item.label}
+                alt={`Johnny Blake Actor - ${item.label}`}
                 width={44}
                 height={44}
                 style={{
                   display: "block",
                   background: "rgba(255, 255, 255, 0.8)", // you were missing the closing )
                   borderRadius: "8px",
-                  flexShrink: 0, // prevents icon squishing
+                  flexShrink: 0, // prevents icon squishing// Change your drop-shadow and text color
+                  color: "#ffcc00",
                   filter:
-                    "drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #00eaff)",
+                    "drop-shadow(0 0 6px #ffcc00) drop-shadow(0 0 12px #ffcc00)",
                 }}
               />
             )}

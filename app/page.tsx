@@ -91,7 +91,20 @@ export default function HomePage() {
             
           </div>
         </Glitch> */}
-        <Glitch delay={0.4} className="glitch" style={{ letterSpacing: "2px" }}>
+
+        <Glitch delay={0} className="glitch" style={{}}>
+          <Image
+            src={"/images/johnny-blake-los-angeles-film-actor.png"}
+            alt="Official headshot for Johnny Blake, Los Angeles film actor."
+            width={380}
+            height={508}
+          />
+        </Glitch>
+        <Glitch
+          delay={0.4}
+          className="glitch"
+          style={{ letterSpacing: "2px", marginTop: "-63px" }}
+        >
           Johnny Blake
         </Glitch>
         <Glitch delay={0.5} className="subheader">
@@ -166,6 +179,7 @@ Recent work includes lead performances as Chief Deputy Boe Dunn in the drama Ble
             <Glitch
               delay={4.4 + index * 0.1}
               className={styles.description}
+              key={`paragraph-${index}`}
               // className="subheader"
             >
               {paragraph}

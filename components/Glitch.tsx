@@ -1,5 +1,5 @@
 "use client";
-import { motion, MotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import { ReactNode, useEffect, useState } from "react";
 
 export function Glitch({
@@ -11,23 +11,34 @@ export function Glitch({
   delay: number;
   className?: string;
   children: ReactNode;
-} & MotionProps) {
+  style?: React.CSSProperties;
+}) {
   const [shouldRender, setShouldRender] = useState(false);
+  const [isAnimationDone, setIsAnimationDone] = useState(false);
+
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setShouldRender(true);
     }, delay * 1000);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [delay]);
 
-  return shouldRender ? (
+  if (!shouldRender) return null; // No whitespace until ready
+
+  return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={className}
-      style={style}
+      transition={{ duration: 1, ease: "easeOut" }}
+      // THE FIX: Only add the CSS class AFTER the fade-in is finished
+      onAnimationComplete={() => setIsAnimationDone(true)}
+      className={`${className} ${isAnimationDone ? "animate-breath" : ""}`}
+      style={{ 
+        ...style,
+        willChange: "opacity, transform"
+      }}
     >
       {children}
     </motion.div>
-  ) : null;
+  );
 }
