@@ -201,6 +201,16 @@ Recent work includes lead performances as Chief Deputy Boe Dunn in the drama Ble
           </video>
         </Glitch>
 
+        <Glitch delay={6.6}>
+          <a
+            href="/Johnny-Blake-Actor-Resume-2026.pdf"
+            download="/Johnny-Blake-Actor-Resume-2026.pdf"
+            className="resume-button"
+          >
+            Download Acting Resume (PDF)
+          </a>
+        </Glitch>
+
         {/* <Guestbook isAdmin={isAdmin} /> */}
       </main>
     </>
