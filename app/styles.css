@@ -44,7 +44,22 @@
     sizeGlow 12s ease-in-out infinite alternate;
 }
 
+main > .glitch:nth-child(1) img {
+  /* Use the exact ratio of your 1164 x 1555 crop */
+  aspect-ratio: 1164 / 1555;
+
+  /* This ensures the image fills the space without stretching */
+  object-fit: cover;
+
+  /* This keeps it from breaking the phone screen */
+  width: 100%;
+  max-width: 450px; /* Or whatever your desktop width was */
+  height: auto;
+
+  display: block;
+  margin: 0 auto;
+}
+
 .glitch img {
   filter: drop-shadow(0 0 16px rgba(255, 185, 0, 0.6));
-  /* margin-left: -38px; */
 }

@@ -103,7 +103,11 @@ export default function HomePage() {
         <Glitch
           delay={0.4}
           className="glitch"
-          style={{ letterSpacing: "2px", marginTop: "-63px" }}
+          style={{
+            letterSpacing: "2px",
+            marginTop: "-63px",
+            fontSize: "clamp(2rem, 12vw, 4.5rem)",
+          }}
         >
           Johnny Blake
         </Glitch>
