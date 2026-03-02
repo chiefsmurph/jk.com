@@ -10,6 +10,7 @@ import { Glitch } from "@/components/Glitch";
 import Guestbook from "./components/Guestbook";
 import styles from "./App.module.css";
 import SocialIcons from "./components/SocialIcons";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 // import { TypingText } from "@/components/TypingText";
 
 export default function HomePage() {
@@ -192,13 +193,14 @@ Recent work includes lead performances as Chief Deputy Boe Dunn in the drama Ble
 
         <Glitch delay={6} className={styles["video-wrapper"]}>
           <h1>Johnny's Actor Reel (2026)</h1>
-          <video controls width="100%">
+          <YouTubeEmbed videoId="gX8auGLwFI4" />
+          {/* <video controls width="100%">
             <source
               src="/videos/johnny_keeys_reel_feb_2026_web.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </Glitch>
 
         <Glitch delay={6.6}>
