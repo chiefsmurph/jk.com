@@ -191,7 +191,7 @@ Recent work includes lead performances as Chief Deputy Boe Dunn in the drama Ble
             </Glitch>
           ))}
 
-        <Glitch delay={6} className={styles["video-wrapper"]}>
+        <Glitch delay={6} className={styles["video-wrapper"]} breathe={false}>
           <h1>Johnny's Actor Reel (2026)</h1>
           <YouTubeEmbed videoId="gX8auGLwFI4" />
           {/* <video controls width="100%">

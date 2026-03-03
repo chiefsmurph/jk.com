@@ -6,12 +6,14 @@ export function Glitch({
   delay,
   className,
   children,
-  style
+  style,
+  breathe,
 }: {
   delay: number;
   className?: string;
   children: ReactNode;
   style?: React.CSSProperties;
+  breathe?: boolean;
 }) {
   const [shouldRender, setShouldRender] = useState(false);
   const [isAnimationDone, setIsAnimationDone] = useState(false);
@@ -32,10 +34,10 @@ export function Glitch({
       transition={{ duration: 1, ease: "easeOut" }}
       // THE FIX: Only add the CSS class AFTER the fade-in is finished
       onAnimationComplete={() => setIsAnimationDone(true)}
-      className={`${className} ${isAnimationDone ? "animate-breath" : ""}`}
-      style={{ 
+      className={`${className} ${isAnimationDone && breathe ? "animate-breath" : ""}`}
+      style={{
         ...style,
-        willChange: "opacity, transform"
+        willChange: "opacity, transform",
       }}
     >
       {children}
