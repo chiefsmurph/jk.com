@@ -174,10 +174,9 @@ export default function HomePage() {
         </Glitch>
 
         {`
-Johnny Blake is a Los Angeles-based actor defined by a grounded stillness and a presence that suggests an innate awareness of the layers beneath the surface. A Berklee-trained musician, he brings rhythm and restraint to performances rooted in classic high-stakes screen acting. Johnny carries a rare, lived-in clarity—a centered energy that moves effortlessly between the gritty and the cerebral.
+Johnny Blake is a Los Angeles–based actor known for a grounded presence and quiet cinematic intensity. Currently training at The Berg Studios, he brings precision and restraint to roles defined by authority, intelligence, and internal conflict.
 
-Recent work includes lead performances as Chief Deputy Boe Dunn in the drama Bleed American and Alex in the cerebral project The Magic Box, along with a role as Detective Tempski in Gas. He will next appear as the layered, affable Stoney in the upcoming feature film Killer Revenge.
-`
+His work includes the feature film Bleed American, where he stars as Chief Deputy Boe Dunn, along with lead roles in The Magic Box and Gas, in which he appears as Detective Tempski. He will next appear as the affable but layered Stoney in the upcoming feature film Killer Revenge.`
           .trim()
           .split("\n")
           .map((paragraph, index) => (
@@ -193,7 +192,7 @@ Recent work includes lead performances as Chief Deputy Boe Dunn in the drama Ble
 
         <Glitch delay={6} className={styles["video-wrapper"]} breathe={false}>
           <h1>Johnny's Actor Reel (2026)</h1>
-          <YouTubeEmbed videoId="gX8auGLwFI4" />
+          <YouTubeEmbed videoId="RAm9beC9_a8" />
           {/* <video controls width="100%">
             <source
               src="/videos/johnny_keeys_reel_feb_2026_web.mp4"
