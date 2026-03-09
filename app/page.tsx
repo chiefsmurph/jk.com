@@ -174,9 +174,13 @@ export default function HomePage() {
         </Glitch>
 
         {`
+
 Johnny Blake is a Los Angeles–based actor known for a grounded presence and quiet cinematic intensity. Currently training at The Berg Studios, he brings precision and restraint to roles defined by authority, intelligence, and internal conflict.
 
-His work includes the feature film Bleed American, where he stars as Chief Deputy Boe Dunn, along with lead roles in The Magic Box and Gas, in which he appears as Detective Tempski. He will next appear as the affable but layered Stoney in the upcoming feature film Killer Revenge.`
+While his natural stillness and wide emotional range often lead to dramatic roles, Johnny also demonstrates strong comedic instincts, including an ability to deliver deadpan lines with sharp timing and to play eccentric or offbeat characters with authenticity.
+
+His work includes the feature film Bleed American, where he stars as Chief Deputy Boe Dunn, along with lead roles in The Magic Box and Gas. He will next appear as the affable but layered Stoney in the upcoming feature film Killer Revenge.
+`
           .trim()
           .split("\n")
           .map((paragraph, index) => (
