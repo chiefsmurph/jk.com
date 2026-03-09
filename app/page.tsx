@@ -192,7 +192,7 @@ His work includes the feature film Bleed American, where he stars as Chief Deput
 
         <Glitch delay={6} className={styles["video-wrapper"]} breathe={false}>
           <h1>Johnny's Actor Reel (2026)</h1>
-          <YouTubeEmbed videoId="RAm9beC9_a8" />
+          <YouTubeEmbed videoId="oI7StXjQUOs" />
           {/* <video controls width="100%">
             <source
               src="/videos/johnny_keeys_reel_feb_2026_web.mp4"
