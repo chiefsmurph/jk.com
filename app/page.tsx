@@ -93,12 +93,13 @@ export default function HomePage() {
           </div>
         </Glitch> */}
 
-        <Glitch delay={0} className="glitch" style={{}}>
+        <Glitch delay={0.4} className="glitch" style={{}}>
           <Image
             src={"/images/johnny-blake-los-angeles-film-actor.png"}
             alt="Official headshot for Johnny Blake, Los Angeles film actor."
             width={380}
             height={508}
+            style={{ maxWidth: "100px" }}
           />
         </Glitch>
         <Glitch
@@ -106,15 +107,15 @@ export default function HomePage() {
           className="glitch"
           style={{
             letterSpacing: "2px",
-            marginTop: "-63px",
-            fontSize: "clamp(2rem, 12vw, 4.5rem)",
+            marginTop: "-23px",
+            fontSize: "clamp(2rem, 12vw, 2.5rem)",
           }}
         >
           Johnny Blake
         </Glitch>
         <Glitch delay={0.5} className="subheader">
           <TypingText
-            text="Los Angeles-based Film Actor"
+            text="Los Angeles | Film Actor"
             disabled={!shouldAnimate}
           />
         </Glitch>
@@ -175,11 +176,13 @@ export default function HomePage() {
 
         {`
 
-Johnny Blake is a Los Angeles–based actor known for a grounded presence and quiet cinematic intensity. Currently training at The Berg Studios, he brings precision and restraint to roles defined by authority, intelligence, and internal conflict.
+Johnny Blake is a Los Angeles–based actor known for a grounded presence and quiet cinematic intensity.  He brings precision and restraint to roles defined by authority, intelligence, and internal conflict.
 
 While his natural stillness and wide emotional range often lead to dramatic roles, Johnny also demonstrates strong comedic instincts, including an ability to deliver deadpan lines with sharp timing and to play eccentric or offbeat characters with authenticity.
 
 His work includes the feature film Bleed American, where he stars as Chief Deputy Boe Dunn, along with lead roles in The Magic Box and Gas. He will next appear as the affable but layered Stoney in the upcoming feature film Killer Revenge.
+
+Known for a positive, professional communication style, Johnny responds quickly to direction and is frequently noted for how seamlessly he integrates feedback into his performances.
 `
           .trim()
           .split("\n")
@@ -194,6 +197,14 @@ His work includes the feature film Bleed American, where he stars as Chief Deput
             </Glitch>
           ))}
 
+        <Glitch delay={5.5} className={styles["video-wrapper"]} breathe={false} style={{ float: 'left'}}>
+          <Image
+            src={"/images/fit me transparent.png"}
+            alt="Fit shot for JB"
+            width={200}
+            height={333}
+          />
+        </Glitch>
         <Glitch delay={6} className={styles["video-wrapper"]} breathe={false}>
           <h1>Johnny's Actor Reel (2026)</h1>
           <YouTubeEmbed videoId="oI7StXjQUOs" />

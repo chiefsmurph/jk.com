@@ -1,7 +1,10 @@
 .videoWrapper {
-  width: 100%;
-  max-width: 1000px;
+  /* width: 100%;
+  max-width: 1000px; */
   margin: 24px auto;
+
+  float: right;
+  min-width: 600px;
 }
 
 .videoWrapper iframe {

@@ -53,7 +53,7 @@ main > .glitch:nth-child(1) img {
 
   /* This keeps it from breaking the phone screen */
   width: 100%;
-  max-width: 450px; /* Or whatever your desktop width was */
+  max-width: 152px; /* Or whatever your desktop width was */
   height: auto;
 
   display: block;
