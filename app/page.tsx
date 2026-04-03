@@ -99,7 +99,7 @@ export default function HomePage() {
             alt="Official headshot for Johnny Blake, Los Angeles film actor."
             width={380}
             height={508}
-            style={{ maxWidth: "100px" }}
+            style={{ maxWidth: "200px" }}
           />
         </Glitch>
         <Glitch
@@ -207,7 +207,7 @@ Known for a positive, professional communication style, Johnny responds quickly 
         </Glitch>
         <Glitch delay={6} className={styles["video-wrapper"]} breathe={false}>
           <h1>Johnny's Actor Reel (2026)</h1>
-          <YouTubeEmbed videoId="oI7StXjQUOs" />
+          <YouTubeEmbed videoId="Ik2csbYI6Gg" />
           {/* <video controls width="100%">
             <source
               src="/videos/johnny_keeys_reel_feb_2026_web.mp4"
