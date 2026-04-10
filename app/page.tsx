@@ -176,14 +176,10 @@ export default function HomePage() {
 
         {`
 
-Johnny Blake is a Los Angeles–based actor known for a grounded presence and quiet cinematic intensity.  He brings precision and restraint to roles defined by authority, intelligence, and internal conflict.
-
+Johnny Blake is a Los Angeles–based actor known for a grounded presence and quiet cinematic intensity. He brings precision and restraint to roles defined by authority, intelligence, and internal conflict, often portraying characters with layered control and subtle unpredictability.
 While his natural stillness and wide emotional range often lead to dramatic roles, Johnny also demonstrates strong comedic instincts, including an ability to deliver deadpan lines with sharp timing and to play eccentric or offbeat characters with authenticity.
-
 His work includes the feature film Bleed American, where he stars as Chief Deputy Boe Dunn, along with lead roles in The Magic Box and Gas. He will next appear as the affable but layered Stoney in the upcoming feature film Killer Revenge.
-
-Known for a positive, professional communication style, Johnny responds quickly to direction and is frequently noted for how seamlessly he integrates feedback into his performances.
-`
+Known for a professional and collaborative approach, Johnny responds quickly to direction and is consistently noted for how seamlessly he integrates feedback into his performances.`
           .trim()
           .split("\n")
           .map((paragraph, index) => (
@@ -197,14 +193,19 @@ Known for a positive, professional communication style, Johnny responds quickly 
             </Glitch>
           ))}
 
-        <Glitch delay={5.5} className={styles["video-wrapper"]} breathe={false} style={{ float: 'left'}}>
+        {/* <Glitch
+          delay={5.5}
+          className={styles["video-wrapper"]}
+          breathe={false}
+          style={{ float: "left" }}
+        >
           <Image
             src={"/images/fit me transparent.png"}
             alt="Fit shot for JB"
             width={200}
             height={333}
           />
-        </Glitch>
+        </Glitch> */}
         <Glitch delay={6} className={styles["video-wrapper"]} breathe={false}>
           <h1>Johnny's Actor Reel (2026)</h1>
           <YouTubeEmbed videoId="Ik2csbYI6Gg" />
